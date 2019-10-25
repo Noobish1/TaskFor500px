@@ -1,6 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-TaskFor500px/Pods-TaskFor500px-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/KeyedAPIParameters/KeyedAPIParameters.framework
+${BUILT_PRODUCTS_DIR}/Keys/Keys.framework
 ${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
 ${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework
 ${PODS_ROOT}/Reveal-SDK/RevealServer/iOS/RevealServer.framework

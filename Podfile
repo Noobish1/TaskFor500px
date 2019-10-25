@@ -3,6 +3,13 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 platform :ios, '10.0'
 
+plugin 'cocoapods-keys', {
+    :project => "TaskFor500px",
+    :keys => [
+        "APIKey",
+    ]
+}
+
 target 'TaskFor500px' do
     pod 'Then', '2.6.0'
     pod 'RxSwift' , '5.0.0'
