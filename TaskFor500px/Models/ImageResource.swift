@@ -1,5 +1,7 @@
+import CoreGraphics
 import Foundation
 
+// MARK: ImageResource
 internal struct ImageResource: Codable {
     internal enum CodingKeys: String, CodingKey {
         case format = "format"
