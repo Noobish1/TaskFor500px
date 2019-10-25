@@ -3,11 +3,11 @@ import UIKit
 internal final class ViewController: UIViewController {
     // MARK: init
     @available(*, unavailable)
-    public required init?(coder aDecoder: NSCoder) {
+    internal required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public init() {
+    internal init() {
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -18,4 +18,3 @@ internal final class ViewController: UIViewController {
         view.backgroundColor = .magenta
     }
 }
-

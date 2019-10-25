@@ -112,6 +112,8 @@
 				75824CBF2363635700E00DA5 /* Sources */,
 				75824CC02363635700E00DA5 /* Frameworks */,
 				75824CC12363635700E00DA5 /* Resources */,
+				75824CE223639C2F00E00DA5 /* SwiftLint autocorrect */,
+				75824CE323639C5C00E00DA5 /* SwiftLint lint */,
 				E560D9E411F4D6D0FDE9999D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -169,6 +171,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		75824CE223639C2F00E00DA5 /* SwiftLint autocorrect */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint autocorrect";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" autocorrect --quiet .\n";
+		};
+		75824CE323639C5C00E00DA5 /* SwiftLint lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -o pipefail\n\n\"${PODS_ROOT}/SwiftLint/swiftlint\" --strict --quiet . | sed 's/warning:/error:/g'\n";
+		};
 		BB99739842F8775D6080CA04 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
