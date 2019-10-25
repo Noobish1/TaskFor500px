@@ -1,37 +1,25 @@
-//
-//  AppDelegate.swift
-//  TaskFor500px
-//
-//  Created by Blair McArthur on 2019-10-25.
-//  Copyright © 2019 Noobish1. All rights reserved.
-//
-
 import UIKit
+import Then
 
+// MARK: AppDelegate
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+internal final class AppDelegate: UIResponder {
+    // MARK: properties
+    internal var window: UIWindow?
+}
 
-
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+// MARK: UIApplicationDelegate
+extension AppDelegate: UIApplicationDelegate {
+    internal func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
+        self.window = UIWindow(frame: UIScreen.main.bounds).then {
+            $0.rootViewController = ViewController()
+            $0.makeKeyAndVisible()
+        }
+        
         return true
     }
-
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-
-
 }
 

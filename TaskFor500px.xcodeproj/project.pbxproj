@@ -3,27 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		75824CC72363635700E00DA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824CC62363635700E00DA5 /* AppDelegate.swift */; };
-		75824CC92363635700E00DA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824CC82363635700E00DA5 /* SceneDelegate.swift */; };
 		75824CCB2363635700E00DA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824CCA2363635700E00DA5 /* ViewController.swift */; };
-		75824CCE2363635700E00DA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75824CCC2363635700E00DA5 /* Main.storyboard */; };
 		75824CD02363635B00E00DA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75824CCF2363635B00E00DA5 /* Assets.xcassets */; };
 		75824CD32363635B00E00DA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75824CD12363635B00E00DA5 /* LaunchScreen.storyboard */; };
+		E6E01E8E964E9488996C304E /* Pods_TaskFor500px.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB715017ABF2D68C44897C6F /* Pods_TaskFor500px.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		75824CC32363635700E00DA5 /* TaskFor500px.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskFor500px.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75824CC62363635700E00DA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		75824CC82363635700E00DA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		75824CCA2363635700E00DA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		75824CCD2363635700E00DA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		75824CCF2363635B00E00DA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75824CD22363635B00E00DA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75824CD42363635B00E00DA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75824CDA23636A9900E00DA5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		75824CDB23636A9900E00DA5 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		75824CDC23636A9900E00DA5 /* Gemfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Gemfile; sourceTree = "<group>"; };
+		75824CDD23636A9900E00DA5 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		8B33B1EF7A72938ABD0876AE /* Pods-TaskFor500px.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskFor500px.debug.xcconfig"; path = "Target Support Files/Pods-TaskFor500px/Pods-TaskFor500px.debug.xcconfig"; sourceTree = "<group>"; };
+		AB715017ABF2D68C44897C6F /* Pods_TaskFor500px.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskFor500px.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF68AF76380C36DAA033A28E /* Pods-TaskFor500px.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskFor500px.release.xcconfig"; path = "Target Support Files/Pods-TaskFor500px/Pods-TaskFor500px.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6E01E8E964E9488996C304E /* Pods_TaskFor500px.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		429DD5FFB29C62BC72AA3A38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB715017ABF2D68C44897C6F /* Pods_TaskFor500px.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		75824CBA2363635700E00DA5 = {
 			isa = PBXGroup;
 			children = (
+				75824CDA23636A9900E00DA5 /* .gitignore */,
+				75824CDD23636A9900E00DA5 /* .swiftlint.yml */,
+				75824CDC23636A9900E00DA5 /* Gemfile */,
+				75824CDB23636A9900E00DA5 /* Podfile */,
 				75824CC52363635700E00DA5 /* TaskFor500px */,
 				75824CC42363635700E00DA5 /* Products */,
+				EBB103F628F8C024401AD042 /* Pods */,
+				429DD5FFB29C62BC72AA3A38 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +76,29 @@
 			isa = PBXGroup;
 			children = (
 				75824CC62363635700E00DA5 /* AppDelegate.swift */,
-				75824CC82363635700E00DA5 /* SceneDelegate.swift */,
 				75824CCA2363635700E00DA5 /* ViewController.swift */,
-				75824CCC2363635700E00DA5 /* Main.storyboard */,
+				75824CDE2363962800E00DA5 /* Supporting Files */,
+			);
+			path = TaskFor500px;
+			sourceTree = "<group>";
+		};
+		75824CDE2363962800E00DA5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				75824CCF2363635B00E00DA5 /* Assets.xcassets */,
 				75824CD12363635B00E00DA5 /* LaunchScreen.storyboard */,
 				75824CD42363635B00E00DA5 /* Info.plist */,
 			);
-			path = TaskFor500px;
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EBB103F628F8C024401AD042 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8B33B1EF7A72938ABD0876AE /* Pods-TaskFor500px.debug.xcconfig */,
+				CF68AF76380C36DAA033A28E /* Pods-TaskFor500px.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75824CD72363635B00E00DA5 /* Build configuration list for PBXNativeTarget "TaskFor500px" */;
 			buildPhases = (
+				BB99739842F8775D6080CA04 /* [CP] Check Pods Manifest.lock */,
 				75824CBF2363635700E00DA5 /* Sources */,
 				75824CC02363635700E00DA5 /* Frameworks */,
 				75824CC12363635700E00DA5 /* Resources */,
+				E560D9E411F4D6D0FDE9999D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,11 +163,52 @@
 			files = (
 				75824CD32363635B00E00DA5 /* LaunchScreen.storyboard in Resources */,
 				75824CD02363635B00E00DA5 /* Assets.xcassets in Resources */,
-				75824CCE2363635700E00DA5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BB99739842F8775D6080CA04 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TaskFor500px-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E560D9E411F4D6D0FDE9999D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TaskFor500px/Pods-TaskFor500px-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TaskFor500px/Pods-TaskFor500px-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TaskFor500px/Pods-TaskFor500px-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		75824CBF2363635700E00DA5 /* Sources */ = {
@@ -140,21 +217,12 @@
 			files = (
 				75824CCB2363635700E00DA5 /* ViewController.swift in Sources */,
 				75824CC72363635700E00DA5 /* AppDelegate.swift in Sources */,
-				75824CC92363635700E00DA5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		75824CCC2363635700E00DA5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				75824CCD2363635700E00DA5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		75824CD12363635B00E00DA5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,11 +350,13 @@
 		};
 		75824CD82363635B00E00DA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B33B1EF7A72938ABD0876AE /* Pods-TaskFor500px.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3JE2245GFQ;
-				INFOPLIST_FILE = TaskFor500px/Info.plist;
+				INFOPLIST_FILE = "TaskFor500px/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,17 +364,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.noobish1.TaskFor500px;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		75824CD92363635B00E00DA5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF68AF76380C36DAA033A28E /* Pods-TaskFor500px.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3JE2245GFQ;
-				INFOPLIST_FILE = TaskFor500px/Info.plist;
+				INFOPLIST_FILE = "TaskFor500px/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +384,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.noobish1.TaskFor500px;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
