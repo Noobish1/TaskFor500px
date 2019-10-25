@@ -77,6 +77,8 @@ opt_in_rules:
     - contains_over_filter_is_empty
 included:
     - TaskFor500px
+excluded:
+    - TaskFor500px/Generated/R.generated.swift
 unused_declaration:
     include_public_and_open: true
 type_contents_order:
@@ -108,11 +110,6 @@ function_body_length:
 type_body_length:
     - 600 # warning
 type_name:
-    excluded:
-        - R # R.swift
-        - image # R.swift
-        - intern # R.swift
-        - _R # R.swift
     min_length: 2 # only warning
     max_length: # warning and error
         warning: 60

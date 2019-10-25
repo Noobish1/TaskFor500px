@@ -11,6 +11,8 @@
 		75824CCB2363635700E00DA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824CCA2363635700E00DA5 /* ViewController.swift */; };
 		75824CD02363635B00E00DA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75824CCF2363635B00E00DA5 /* Assets.xcassets */; };
 		75824CD32363635B00E00DA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75824CD12363635B00E00DA5 /* LaunchScreen.storyboard */; };
+		75824CE123639C0200E00DA5 /* popular-photos.json in Resources */ = {isa = PBXBuildFile; fileRef = 75824CE023639C0200E00DA5 /* popular-photos.json */; };
+		75824CE923639ECD00E00DA5 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824CE823639ECD00E00DA5 /* R.generated.swift */; };
 		E6E01E8E964E9488996C304E /* Pods_TaskFor500px.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB715017ABF2D68C44897C6F /* Pods_TaskFor500px.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 		75824CDB23636A9900E00DA5 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		75824CDC23636A9900E00DA5 /* Gemfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Gemfile; sourceTree = "<group>"; };
 		75824CDD23636A9900E00DA5 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		75824CE023639C0200E00DA5 /* popular-photos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "popular-photos.json"; sourceTree = "<group>"; };
+		75824CE823639ECD00E00DA5 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		8B33B1EF7A72938ABD0876AE /* Pods-TaskFor500px.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskFor500px.debug.xcconfig"; path = "Target Support Files/Pods-TaskFor500px/Pods-TaskFor500px.debug.xcconfig"; sourceTree = "<group>"; };
 		AB715017ABF2D68C44897C6F /* Pods_TaskFor500px.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskFor500px.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF68AF76380C36DAA033A28E /* Pods-TaskFor500px.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskFor500px.release.xcconfig"; path = "Target Support Files/Pods-TaskFor500px/Pods-TaskFor500px.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 		75824CC52363635700E00DA5 /* TaskFor500px */ = {
 			isa = PBXGroup;
 			children = (
+				75824CE523639E5C00E00DA5 /* Generated */,
 				75824CE623639E6200E00DA5 /* Application */,
 				75824CE723639E6900E00DA5 /* ViewControllers */,
 				75824CDE2363962800E00DA5 /* Supporting Files */,
@@ -85,6 +90,7 @@
 		75824CDE2363962800E00DA5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				75824CDF23639BE100E00DA5 /* Example data */,
 				75824CCF2363635B00E00DA5 /* Assets.xcassets */,
 				75824CD12363635B00E00DA5 /* LaunchScreen.storyboard */,
 				75824CD42363635B00E00DA5 /* Info.plist */,
@@ -98,6 +104,14 @@
 				75824CE023639C0200E00DA5 /* popular-photos.json */,
 			);
 			path = "Example data";
+			sourceTree = "<group>";
+		};
+		75824CE523639E5C00E00DA5 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				75824CE823639ECD00E00DA5 /* R.generated.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 		75824CE623639E6200E00DA5 /* Application */ = {
@@ -133,6 +147,7 @@
 			buildConfigurationList = 75824CD72363635B00E00DA5 /* Build configuration list for PBXNativeTarget "TaskFor500px" */;
 			buildPhases = (
 				BB99739842F8775D6080CA04 /* [CP] Check Pods Manifest.lock */,
+				75824CE423639E3500E00DA5 /* R.swift */,
 				75824CBF2363635700E00DA5 /* Sources */,
 				75824CC02363635700E00DA5 /* Frameworks */,
 				75824CC12363635700E00DA5 /* Resources */,
@@ -187,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75824CE123639C0200E00DA5 /* popular-photos.json in Resources */,
 				75824CD32363635B00E00DA5 /* LaunchScreen.storyboard in Resources */,
 				75824CD02363635B00E00DA5 /* Assets.xcassets in Resources */,
 			);
@@ -230,6 +246,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "set -e\nset -o pipefail\n\n\"${PODS_ROOT}/SwiftLint/swiftlint\" --strict --quiet . | sed 's/warning:/error:/g'\n";
+		};
+		75824CE423639E3500E00DA5 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/TaskFor500px/Generated/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate --accessLevel public \"$SRCROOT/TaskFor500px/Generated/R.generated.swift\"\n";
 		};
 		BB99739842F8775D6080CA04 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -279,6 +315,7 @@
 			files = (
 				75824CCB2363635700E00DA5 /* ViewController.swift in Sources */,
 				75824CC72363635700E00DA5 /* AppDelegate.swift in Sources */,
+				75824CE923639ECD00E00DA5 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
