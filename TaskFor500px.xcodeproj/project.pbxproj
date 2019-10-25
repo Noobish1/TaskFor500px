@@ -13,6 +13,13 @@
 		75824CD32363635B00E00DA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75824CD12363635B00E00DA5 /* LaunchScreen.storyboard */; };
 		75824CE123639C0200E00DA5 /* popular-photos.json in Resources */ = {isa = PBXBuildFile; fileRef = 75824CE023639C0200E00DA5 /* popular-photos.json */; };
 		75824CE923639ECD00E00DA5 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824CE823639ECD00E00DA5 /* R.generated.swift */; };
+		75824CEC2363A11C00E00DA5 /* PhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824CEB2363A11C00E00DA5 /* PhotosService.swift */; };
+		75824CEF2363A18B00E00DA5 /* HardCodedURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824CEE2363A18B00E00DA5 /* HardCodedURL.swift */; };
+		75824CF12363A2AA00E00DA5 /* PopularParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824CF02363A2AA00E00DA5 /* PopularParameters.swift */; };
+		75824CF32363AB9100E00DA5 /* PhotosClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824CF22363AB9100E00DA5 /* PhotosClient.swift */; };
+		75824CF62363AD8600E00DA5 /* PopularPhotosResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824CF52363AD8600E00DA5 /* PopularPhotosResponse.swift */; };
+		75824CF82363AFFB00E00DA5 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824CF72363AFFB00E00DA5 /* Photo.swift */; };
+		75824CFA2363B01100E00DA5 /* ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824CF92363B01100E00DA5 /* ImageResource.swift */; };
 		E6E01E8E964E9488996C304E /* Pods_TaskFor500px.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB715017ABF2D68C44897C6F /* Pods_TaskFor500px.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +36,13 @@
 		75824CDD23636A9900E00DA5 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		75824CE023639C0200E00DA5 /* popular-photos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "popular-photos.json"; sourceTree = "<group>"; };
 		75824CE823639ECD00E00DA5 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		75824CEB2363A11C00E00DA5 /* PhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosService.swift; sourceTree = "<group>"; };
+		75824CEE2363A18B00E00DA5 /* HardCodedURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HardCodedURL.swift; sourceTree = "<group>"; };
+		75824CF02363A2AA00E00DA5 /* PopularParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularParameters.swift; sourceTree = "<group>"; };
+		75824CF22363AB9100E00DA5 /* PhotosClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosClient.swift; sourceTree = "<group>"; };
+		75824CF52363AD8600E00DA5 /* PopularPhotosResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPhotosResponse.swift; sourceTree = "<group>"; };
+		75824CF72363AFFB00E00DA5 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		75824CF92363B01100E00DA5 /* ImageResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResource.swift; sourceTree = "<group>"; };
 		8B33B1EF7A72938ABD0876AE /* Pods-TaskFor500px.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskFor500px.debug.xcconfig"; path = "Target Support Files/Pods-TaskFor500px/Pods-TaskFor500px.debug.xcconfig"; sourceTree = "<group>"; };
 		AB715017ABF2D68C44897C6F /* Pods_TaskFor500px.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskFor500px.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF68AF76380C36DAA033A28E /* Pods-TaskFor500px.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskFor500px.release.xcconfig"; path = "Target Support Files/Pods-TaskFor500px/Pods-TaskFor500px.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +93,9 @@
 		75824CC52363635700E00DA5 /* TaskFor500px */ = {
 			isa = PBXGroup;
 			children = (
+				75824CF42363AD7400E00DA5 /* Models */,
+				75824CED2363A17A00E00DA5 /* Objects */,
+				75824CEA2363A10100E00DA5 /* Networking */,
 				75824CE523639E5C00E00DA5 /* Generated */,
 				75824CE623639E6200E00DA5 /* Application */,
 				75824CE723639E6900E00DA5 /* ViewControllers */,
@@ -128,6 +145,34 @@
 				75824CCA2363635700E00DA5 /* ViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		75824CEA2363A10100E00DA5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				75824CEB2363A11C00E00DA5 /* PhotosService.swift */,
+				75824CF02363A2AA00E00DA5 /* PopularParameters.swift */,
+				75824CF22363AB9100E00DA5 /* PhotosClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		75824CED2363A17A00E00DA5 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				75824CEE2363A18B00E00DA5 /* HardCodedURL.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		75824CF42363AD7400E00DA5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				75824CF52363AD8600E00DA5 /* PopularPhotosResponse.swift */,
+				75824CF72363AFFB00E00DA5 /* Photo.swift */,
+				75824CF92363B01100E00DA5 /* ImageResource.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		EBB103F628F8C024401AD042 /* Pods */ = {
@@ -314,8 +359,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				75824CCB2363635700E00DA5 /* ViewController.swift in Sources */,
+				75824CF32363AB9100E00DA5 /* PhotosClient.swift in Sources */,
+				75824CF12363A2AA00E00DA5 /* PopularParameters.swift in Sources */,
+				75824CF82363AFFB00E00DA5 /* Photo.swift in Sources */,
 				75824CC72363635700E00DA5 /* AppDelegate.swift in Sources */,
 				75824CE923639ECD00E00DA5 /* R.generated.swift in Sources */,
+				75824CF62363AD8600E00DA5 /* PopularPhotosResponse.swift in Sources */,
+				75824CEC2363A11C00E00DA5 /* PhotosService.swift in Sources */,
+				75824CEF2363A18B00E00DA5 /* HardCodedURL.swift in Sources */,
+				75824CFA2363B01100E00DA5 /* ImageResource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
