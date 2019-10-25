@@ -75,8 +75,8 @@
 		75824CC52363635700E00DA5 /* TaskFor500px */ = {
 			isa = PBXGroup;
 			children = (
-				75824CC62363635700E00DA5 /* AppDelegate.swift */,
-				75824CCA2363635700E00DA5 /* ViewController.swift */,
+				75824CE623639E6200E00DA5 /* Application */,
+				75824CE723639E6900E00DA5 /* ViewControllers */,
 				75824CDE2363962800E00DA5 /* Supporting Files */,
 			);
 			path = TaskFor500px;
@@ -90,6 +90,30 @@
 				75824CD42363635B00E00DA5 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		75824CDF23639BE100E00DA5 /* Example data */ = {
+			isa = PBXGroup;
+			children = (
+				75824CE023639C0200E00DA5 /* popular-photos.json */,
+			);
+			path = "Example data";
+			sourceTree = "<group>";
+		};
+		75824CE623639E6200E00DA5 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				75824CC62363635700E00DA5 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		75824CE723639E6900E00DA5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				75824CCA2363635700E00DA5 /* ViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		EBB103F628F8C024401AD042 /* Pods */ = {
