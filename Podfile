@@ -19,6 +19,7 @@ target 'TaskFor500px' do
     pod 'KeyedAPIParameters', '1.1.0'
     pod 'R.swift', '5.0.3'
     pod 'GreedoLayout', '1.2.0'
+    pod 'Kingfisher', '5.9.0'
     
     # Debug pods
     pod 'SwiftLint', '0.35.0', :configurations => ['Debug']
