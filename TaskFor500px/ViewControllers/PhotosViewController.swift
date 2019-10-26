@@ -1,4 +1,3 @@
-import GreedoLayout
 import Kingfisher
 import RxSwift
 import SnapKit
@@ -21,11 +20,12 @@ internal final class PhotosViewController: UIViewController {
         $0.prefetchDataSource = self
         $0.register(PhotoCollectionCell.self, forCellWithReuseIdentifier: cellIdentifier)
     }
-    private lazy var greedoLayout = GreedoCollectionViewLayout(collectionView: collectionView).then {
-        $0.fixedHeight = false
-        $0.rowMaximumHeight = collectionView.bounds.height / 3
-        $0.dataSource = self
-    }
+    private lazy var greedoLayout = GreedoCalculator(
+        rowMaximumHeight: collectionView.bounds.height / 3,
+        originalSizeForIndexPath: { [unowned self] indexPath in
+            self.response?.photos[safe: indexPath.item]?.size ?? CGSize(width: 0.1, height: 0.1)
+        }
+    )
     private let disposeBag = DisposeBag()
     private let photosClient = PhotosClient()
     private let imageDownloader = ImageDownloader.default
@@ -141,15 +141,6 @@ extension PhotosViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        return greedoLayout.sizeForPhoto(at: indexPath)
-    }
-}
-
-// MARK: GreedoSizeCalculatorDataSource
-extension PhotosViewController: GreedoCollectionViewLayoutDataSource {
-    // swiftlint:disable implicitly_unwrapped_optional
-    internal func greedoCollectionViewLayout(_ layout: GreedoCollectionViewLayout!, originalImageSizeAt indexPath: IndexPath!) -> CGSize {
-    // swiftlint:enable implicitly_unwrapped_optional
-        return response?.photos[safe: indexPath.item]?.size ?? CGSize(width: 0.1, height: 0.1)
+        return greedoLayout.sizeForPhoto(at: indexPath, collectionView: collectionView)
     }
 }

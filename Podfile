@@ -18,7 +18,6 @@ target 'TaskFor500px' do
     pod 'Moya/RxSwift', '14.0.0-beta.2'
     pod 'KeyedAPIParameters', '1.1.0'
     pod 'R.swift', '5.0.3'
-    pod 'GreedoLayout', '1.2.0'
     pod 'Kingfisher', '5.9.0'
     
     # Debug pods
