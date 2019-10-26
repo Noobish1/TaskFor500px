@@ -12,6 +12,9 @@ screenshots/
 
 readme-assets/screenshots/.DS_STORE
 
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+
 # swift-code-metrics
 metrics/
 
