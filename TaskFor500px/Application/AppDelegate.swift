@@ -17,7 +17,7 @@ extension AppDelegate: UIApplicationDelegate {
         // swiftlint:enable discouraged_optional_collection
     ) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds).then {
-            $0.rootViewController = ViewController()
+            $0.rootViewController = PhotosViewController()
             $0.makeKeyAndVisible()
         }
         

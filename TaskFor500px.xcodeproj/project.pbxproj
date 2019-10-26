@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		75824CC72363635700E00DA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824CC62363635700E00DA5 /* AppDelegate.swift */; };
-		75824CCB2363635700E00DA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824CCA2363635700E00DA5 /* ViewController.swift */; };
 		75824CD02363635B00E00DA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75824CCF2363635B00E00DA5 /* Assets.xcassets */; };
 		75824CD32363635B00E00DA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75824CD12363635B00E00DA5 /* LaunchScreen.storyboard */; };
 		75824CE123639C0200E00DA5 /* popular-photos.json in Resources */ = {isa = PBXBuildFile; fileRef = 75824CE023639C0200E00DA5 /* popular-photos.json */; };
@@ -24,13 +23,13 @@
 		75824CFF2363BD1300E00DA5 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824CFE2363BD1300E00DA5 /* UICollectionView.swift */; };
 		75824D032363CE7E00E00DA5 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824D022363CE7E00E00DA5 /* Array.swift */; };
 		75824D062363CFF100E00DA5 /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824D052363CFF000E00DA5 /* PhotoCollectionCell.swift */; };
+		75824D082363D71700E00DA5 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824D072363D71700E00DA5 /* PhotosViewController.swift */; };
 		E6E01E8E964E9488996C304E /* Pods_TaskFor500px.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB715017ABF2D68C44897C6F /* Pods_TaskFor500px.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		75824CC32363635700E00DA5 /* TaskFor500px.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskFor500px.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75824CC62363635700E00DA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		75824CCA2363635700E00DA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		75824CCF2363635B00E00DA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75824CD22363635B00E00DA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75824CD42363635B00E00DA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +50,7 @@
 		75824CFE2363BD1300E00DA5 /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		75824D022363CE7E00E00DA5 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		75824D052363CFF000E00DA5 /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
+		75824D072363D71700E00DA5 /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		8B33B1EF7A72938ABD0876AE /* Pods-TaskFor500px.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskFor500px.debug.xcconfig"; path = "Target Support Files/Pods-TaskFor500px/Pods-TaskFor500px.debug.xcconfig"; sourceTree = "<group>"; };
 		AB715017ABF2D68C44897C6F /* Pods_TaskFor500px.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskFor500px.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF68AF76380C36DAA033A28E /* Pods-TaskFor500px.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskFor500px.release.xcconfig"; path = "Target Support Files/Pods-TaskFor500px/Pods-TaskFor500px.release.xcconfig"; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 		75824CE723639E6900E00DA5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				75824CCA2363635700E00DA5 /* ViewController.swift */,
+				75824D072363D71700E00DA5 /* PhotosViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -402,7 +402,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75824CCB2363635700E00DA5 /* ViewController.swift in Sources */,
 				75824CF32363AB9100E00DA5 /* PhotosClient.swift in Sources */,
 				75824CFD2363B84200E00DA5 /* UIView.swift in Sources */,
 				75824CF12363A2AA00E00DA5 /* PopularParameters.swift in Sources */,
@@ -414,6 +413,7 @@
 				75824CF62363AD8600E00DA5 /* PopularPhotosResponse.swift in Sources */,
 				75824D032363CE7E00E00DA5 /* Array.swift in Sources */,
 				75824CEC2363A11C00E00DA5 /* PhotosService.swift in Sources */,
+				75824D082363D71700E00DA5 /* PhotosViewController.swift in Sources */,
 				75824CEF2363A18B00E00DA5 /* HardCodedURL.swift in Sources */,
 				75824CFA2363B01100E00DA5 /* ImageResource.swift in Sources */,
 			);

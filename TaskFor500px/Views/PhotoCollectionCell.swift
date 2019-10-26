@@ -1,5 +1,5 @@
-import UIKit
 import Then
+import UIKit
 
 internal final class PhotoCollectionCell: UICollectionViewCell {
     // MARK: properties
