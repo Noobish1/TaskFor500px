@@ -3,6 +3,7 @@ import Foundation
 import UIKit
 
 // Simplified Swift version of https://github.com/500px/greedo-layout-for-ios
+// I decided to write this for fun
 internal final class GreedoCalculator {
     // MARK: properties
     private let rowMaximumHeight: CGFloat
