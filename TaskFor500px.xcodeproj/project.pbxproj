@@ -24,6 +24,7 @@
 		75824D032363CE7E00E00DA5 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824D022363CE7E00E00DA5 /* Array.swift */; };
 		75824D062363CFF100E00DA5 /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824D052363CFF000E00DA5 /* PhotoCollectionCell.swift */; };
 		75824D082363D71700E00DA5 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824D072363D71700E00DA5 /* PhotosViewController.swift */; };
+		75EA7E3C2363F4DD0012BD43 /* ImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA7E3B2363F4DD0012BD43 /* ImageSize.swift */; };
 		E6E01E8E964E9488996C304E /* Pods_TaskFor500px.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB715017ABF2D68C44897C6F /* Pods_TaskFor500px.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		75824D022363CE7E00E00DA5 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		75824D052363CFF000E00DA5 /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
 		75824D072363D71700E00DA5 /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		75EA7E3B2363F4DD0012BD43 /* ImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSize.swift; sourceTree = "<group>"; };
 		8B33B1EF7A72938ABD0876AE /* Pods-TaskFor500px.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskFor500px.debug.xcconfig"; path = "Target Support Files/Pods-TaskFor500px/Pods-TaskFor500px.debug.xcconfig"; sourceTree = "<group>"; };
 		AB715017ABF2D68C44897C6F /* Pods_TaskFor500px.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskFor500px.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF68AF76380C36DAA033A28E /* Pods-TaskFor500px.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskFor500px.release.xcconfig"; path = "Target Support Files/Pods-TaskFor500px/Pods-TaskFor500px.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				75824CEE2363A18B00E00DA5 /* HardCodedURL.swift */,
+				75EA7E3B2363F4DD0012BD43 /* ImageSize.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				75824CEC2363A11C00E00DA5 /* PhotosService.swift in Sources */,
 				75824D082363D71700E00DA5 /* PhotosViewController.swift in Sources */,
 				75824CEF2363A18B00E00DA5 /* HardCodedURL.swift in Sources */,
+				75EA7E3C2363F4DD0012BD43 /* ImageSize.swift in Sources */,
 				75824CFA2363B01100E00DA5 /* ImageResource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
