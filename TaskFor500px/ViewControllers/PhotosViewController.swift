@@ -23,13 +23,13 @@ internal final class PhotosViewController: UIViewController {
     private lazy var greedoLayout = GreedoCalculator(
         rowMaximumHeight: collectionView.bounds.height / 3,
         originalSizeForIndexPath: { [unowned self] indexPath in
-            self.response?.photos[safe: indexPath.item]?.size ?? CGSize(width: 0.1, height: 0.1)
+            self.response.photos[safe: indexPath.item]?.size ?? CGSize(width: 0.1, height: 0.1)
         }
     )
     private let disposeBag = DisposeBag()
     private let photosClient = PhotosClient()
     private let imageDownloader = ImageDownloader.default
-    private var response: PopularPhotosResponse?
+    private let response: PopularPhotosResponse
     
     // MARK: status bar
     internal override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -42,7 +42,9 @@ internal final class PhotosViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    internal init() {
+    internal init(response: PopularPhotosResponse) {
+        self.response = response
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -60,27 +62,6 @@ internal final class PhotosViewController: UIViewController {
         })
     }
     
-    internal override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        photosClient.popularPhotos()
-            .subscribe(
-                onSuccess: { [weak self] response in
-                    print("popularPhotos: \(response)")
-                    
-                    guard let strongSelf = self else { return }
-                    
-                    strongSelf.response = response
-                    
-                    strongSelf.collectionView.reloadData()
-                },
-                onError: { error in
-                    print("popularPhotos errored: \(error)")
-                }
-            )
-            .disposed(by: disposeBag)
-    }
-    
     internal override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
@@ -88,18 +69,19 @@ internal final class PhotosViewController: UIViewController {
         
         collectionView.collectionViewLayout.invalidateLayout()
     }
-}
-
-// MARK: UICollectionViewDataSourcePrefetching
-extension PhotosViewController: UICollectionViewDataSourcePrefetching {
+    
+    // MARK: retrieving image URLs
     private func imageURL(for indexPath: IndexPath) -> URL? {
-        return response?.photos[indexPath.item].images.first(where: { $0.size == ImageSize.grid.rawValue })?.url
+        return response.photos[indexPath.item].images.first(where: { $0.size == ImageSize.grid.rawValue })?.url
     }
     
     private func validImageURLs(for indexPaths: [IndexPath]) -> [URL] {
         return indexPaths.compactMap { imageURL(for: $0) }
     }
-    
+}
+
+// MARK: UICollectionViewDataSourcePrefetching
+extension PhotosViewController: UICollectionViewDataSourcePrefetching {
     internal func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         validImageURLs(for: indexPaths).forEach { url in
             imageDownloader.downloadImage(with: url)
@@ -116,7 +98,7 @@ extension PhotosViewController: UICollectionViewDataSourcePrefetching {
 // MARK: UICollectionViewFlowLayoutDataSource
 extension PhotosViewController: UICollectionViewDataSource {
     internal func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return response?.photos.count ?? 0
+        return response.photos.count
     }
     
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
