@@ -162,6 +162,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GreedoLayout/GreedoLayout.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KeyedAPIParameters/KeyedAPIParameters.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Keys/Keys.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
@@ -175,6 +176,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GreedoLayout/GreedoLayout.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KeyedAPIParameters/KeyedAPIParameters.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Keys/Keys.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"

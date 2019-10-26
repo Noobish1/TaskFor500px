@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.0.0-rc.2)
+  - GreedoLayout (1.2.0)
   - KeyedAPIParameters (1.1.0)
   - Keys (1.0.1)
   - Moya/Core (14.0.0-beta.2):
@@ -22,6 +23,7 @@ PODS:
   - Then (2.6.0)
 
 DEPENDENCIES:
+  - GreedoLayout (= 1.2.0)
   - KeyedAPIParameters (= 1.1.0)
   - Keys (from `Pods/CocoaPodsKeys`)
   - Moya/RxSwift (= 14.0.0-beta.2)
@@ -36,6 +38,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - GreedoLayout
     - KeyedAPIParameters
     - Moya
     - R.swift
@@ -61,6 +64,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
+  GreedoLayout: b1a1adc6ed5f281353225e3eb21d18cedee8e513
   KeyedAPIParameters: d1ef5bbc31d222ea2d1ae72f1bb67069bee9aa45
   Keys: a576f4c9c1c641ca913a959a9c62ed3f215a8de9
   Moya: 788e592b92fadb10e30d350ed1a9f75c91eb1368
@@ -74,6 +78,6 @@ SPEC CHECKSUMS:
   SwiftLint: 5553187048b900c91aa03552807681bb6b027846
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
 
-PODFILE CHECKSUM: 631740c5931ab1d76bb8075ff65c3092691e726c
+PODFILE CHECKSUM: 19dd9bdd49fd72095c78d9a780cff1db9dda2d1e
 
 COCOAPODS: 1.7.5

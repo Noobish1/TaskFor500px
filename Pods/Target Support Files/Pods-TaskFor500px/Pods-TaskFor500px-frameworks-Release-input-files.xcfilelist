@@ -1,5 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-TaskFor500px/Pods-TaskFor500px-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/GreedoLayout/GreedoLayout.framework
 ${BUILT_PRODUCTS_DIR}/KeyedAPIParameters/KeyedAPIParameters.framework
 ${BUILT_PRODUCTS_DIR}/Keys/Keys.framework
 ${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
