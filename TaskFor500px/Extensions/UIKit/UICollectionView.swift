@@ -2,7 +2,7 @@ import UIKit
 
 extension UICollectionView {
     // MARK: cells
-    public func n1_dequeueReusableCell<T: UICollectionViewCell>(
+    internal func n1_dequeueReusableCell<T: UICollectionViewCell>(
         identifier: String,
         indexPath: IndexPath
     ) -> T {

@@ -1,12 +1,12 @@
 import Foundation
 
 // MARK: HardCodedURL
-public struct HardCodedURL {
+internal struct HardCodedURL {
     // MARK: properties
-    public let url: URL
+    internal let url: URL
 
     // MARK: init
-    public init(_ urlString: String) {
+    internal init(_ urlString: String) {
         guard let safeURL = URL(string: urlString) else {
             fatalError("urlString \(urlString) could not be turned into a URL")
         }
