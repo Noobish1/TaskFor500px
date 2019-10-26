@@ -1,22 +1,18 @@
+import Kingfisher
 import Then
 import UIKit
 
 internal final class PhotoCollectionCell: UICollectionViewCell {
     // MARK: properties
-    private let imageView = UIImageView().then {
+    internal let imageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
     }
     
     // MARK: init
     internal override init(frame: CGRect) {
         super.init(frame: .zero)
-        
-        contentView.backgroundColor = UIColor(
-            red: .random(in: 0...1),
-            green: .random(in: 0...1),
-            blue: .random(in: 0...1),
-            alpha: 1
-        )
+                
+        contentView.backgroundColor = .white
         
         setupViews()
     }
@@ -29,5 +25,13 @@ internal final class PhotoCollectionCell: UICollectionViewCell {
     // MARK: setup
     private func setupViews() {
         contentView.add(fullscreenSubview: imageView)
+    }
+    
+    // MARK: reuse
+    internal override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        imageView.kf.cancelDownloadTask()
+        imageView.image = nil
     }
 }
