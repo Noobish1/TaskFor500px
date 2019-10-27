@@ -10,6 +10,7 @@ internal struct PopularParameters: Equatable, Hashable, Codable {
     private let imageSize = ImageSize.allCases.map { $0.rawValue }
     private let sort = "votes_count"
     private let page: Int
+    internal let resultsPerPage = 50
     
     // MARK: init
     internal init(page: Int) {
@@ -25,6 +26,7 @@ extension PopularParameters: KeyedAPIParameters {
         case imageSize = "image_size"
         case sort = "sort"
         case page = "page"
+        case resultsPerPage = "rpp"
     }
 
     internal func toKeyedDictionary() -> [Key: APIParamConvertible] {
@@ -33,7 +35,8 @@ extension PopularParameters: KeyedAPIParameters {
             .consumerKey: consumerKey,
             .imageSize: imageSize,
             .sort: sort,
-            .page: page
+            .page: page,
+            .resultsPerPage: resultsPerPage
         ]
     }
 }
