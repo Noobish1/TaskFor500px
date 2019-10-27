@@ -8,6 +8,10 @@
 # fastlane screenshots
 screenshots/
 
+# Cocopods Keys
+
+Pods/CocoaPodsKeys/
+
 !*readme-assets/screenshots/
 
 readme-assets/screenshots/.DS_STORE
