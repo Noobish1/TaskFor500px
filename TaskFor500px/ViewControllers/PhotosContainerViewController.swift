@@ -23,6 +23,11 @@ internal final class PhotosContainerViewController: UIViewController {
     private let photosClient = PhotosClient()
     private var state: State = .loading(PhotosLoadingViewController())
     
+    // MARK: computed property
+    internal override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
+    
     // MARK: setup
     private func setupViews() {
         view.backgroundColor = .white

@@ -31,11 +31,6 @@ internal final class PhotosViewController: UIViewController {
     private let imageDownloader = ImageDownloader.default
     private let response: PopularPhotosResponse
     
-    // MARK: status bar
-    internal override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
-    }
-    
     // MARK: init
     @available(*, unavailable)
     internal required init?(coder aDecoder: NSCoder) {
@@ -52,7 +47,7 @@ internal final class PhotosViewController: UIViewController {
     internal override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        view.backgroundColor = .black
         
         view.add(subview: collectionView, withConstraints: { make in
             make.top.equalToSuperviewOrSafeAreaLayoutGuide()
