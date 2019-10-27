@@ -64,6 +64,7 @@
 		759ECDAB23650961009DC35A /* PhotosLoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosLoadingViewController.swift; sourceTree = "<group>"; };
 		759ECDAD236509B3009DC35A /* PhotosErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosErrorViewController.swift; sourceTree = "<group>"; };
 		759ECDCF23654360009DC35A /* NonEmptyArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonEmptyArray.swift; sourceTree = "<group>"; };
+		759ECDD123656AD1009DC35A /* TaskFor500px-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TaskFor500px-Bridging-Header.h"; sourceTree = "<group>"; };
 		75EA7E3B2363F4DD0012BD43 /* ImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSize.swift; sourceTree = "<group>"; };
 		8B33B1EF7A72938ABD0876AE /* Pods-TaskFor500px.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskFor500px.debug.xcconfig"; path = "Target Support Files/Pods-TaskFor500px/Pods-TaskFor500px.debug.xcconfig"; sourceTree = "<group>"; };
 		AB715017ABF2D68C44897C6F /* Pods_TaskFor500px.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskFor500px.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +136,7 @@
 				75824CCF2363635B00E00DA5 /* Assets.xcassets */,
 				75824CD12363635B00E00DA5 /* LaunchScreen.storyboard */,
 				75824CD42363635B00E00DA5 /* Info.plist */,
+				759ECDD123656AD1009DC35A /* TaskFor500px-Bridging-Header.h */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -590,6 +592,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.noobish1.TaskFor500px;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TaskFor500px/Supporting Files/TaskFor500px-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -610,6 +613,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.noobish1.TaskFor500px;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TaskFor500px/Supporting Files/TaskFor500px-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
