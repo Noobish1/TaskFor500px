@@ -47,7 +47,7 @@ internal final class PhotosContainerViewController: UIViewController {
     private func fetchPhotos() {
         transition(to: .loading(PhotosLoadingViewController()))
         
-        photosClient.popularPhotos()
+        photosClient.popularPhotos(forPage: 1)
             .subscribe(
                 onSuccess: { [weak self] response in
                     guard let strongSelf = self else { return }

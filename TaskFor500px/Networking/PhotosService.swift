@@ -3,7 +3,7 @@ import Foundation
 import Moya
 
 internal enum PhotosService {
-    case popularPhotos
+    case popularPhotos(page: Int)
 }
 
 extension PhotosService: TargetType {
@@ -32,8 +32,8 @@ extension PhotosService: TargetType {
 
     internal var task: Task {
         switch self {
-            case .popularPhotos:
-                let parameters = PopularParameters().toDictionary(forHTTPMethod: .get)
+            case .popularPhotos(page: let page):
+                let parameters = PopularParameters(page: page).toDictionary(forHTTPMethod: .get)
 
                 return .requestParameters(parameters: parameters, encoding: URLEncoding())
         }

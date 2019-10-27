@@ -10,9 +10,9 @@ internal final class PhotosClient {
     internal init() {}
     
     // MARK: API calls
-    internal func popularPhotos() -> Single<PopularPhotosResponse> {
+    internal func popularPhotos(forPage page: Int) -> Single<PopularPhotosResponse> {
         return photosProvider.rx
-            .request(.popularPhotos)
+            .request(.popularPhotos(page: page))
             .map(PopularPhotosResponse.self)
     }
 }
