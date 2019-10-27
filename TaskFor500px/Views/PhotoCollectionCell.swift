@@ -6,13 +6,22 @@ internal final class PhotoCollectionCell: UICollectionViewCell {
     // MARK: properties
     internal let imageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
+        $0.isOpaque = true
+        $0.clipsToBounds = true
+        $0.backgroundColor = .white
     }
     
     // MARK: init
     internal override init(frame: CGRect) {
         super.init(frame: .zero)
-                
+
+        self.isOpaque = true
+        self.clipsToBounds = true
+        self.backgroundColor = .white
+        
         contentView.backgroundColor = .white
+        contentView.clipsToBounds = true
+        contentView.isOpaque = true
         
         setupViews()
     }
