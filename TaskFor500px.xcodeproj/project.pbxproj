@@ -30,6 +30,7 @@
 		759ECDAC23650961009DC35A /* PhotosLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ECDAB23650961009DC35A /* PhotosLoadingViewController.swift */; };
 		759ECDAE236509B4009DC35A /* PhotosErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ECDAD236509B3009DC35A /* PhotosErrorViewController.swift */; };
 		759ECDD023654360009DC35A /* NonEmptyArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ECDCF23654360009DC35A /* NonEmptyArray.swift */; };
+		759ECDD8236667FB009DC35A /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ECDD7236667FB009DC35A /* UIImage.swift */; };
 		75EA7E3C2363F4DD0012BD43 /* ImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA7E3B2363F4DD0012BD43 /* ImageSize.swift */; };
 		E6E01E8E964E9488996C304E /* Pods_TaskFor500px.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB715017ABF2D68C44897C6F /* Pods_TaskFor500px.framework */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		759ECDAD236509B3009DC35A /* PhotosErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosErrorViewController.swift; sourceTree = "<group>"; };
 		759ECDCF23654360009DC35A /* NonEmptyArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonEmptyArray.swift; sourceTree = "<group>"; };
 		759ECDD123656AD1009DC35A /* TaskFor500px-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TaskFor500px-Bridging-Header.h"; sourceTree = "<group>"; };
+		759ECDD7236667FB009DC35A /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		75EA7E3B2363F4DD0012BD43 /* ImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSize.swift; sourceTree = "<group>"; };
 		8B33B1EF7A72938ABD0876AE /* Pods-TaskFor500px.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskFor500px.debug.xcconfig"; path = "Target Support Files/Pods-TaskFor500px/Pods-TaskFor500px.debug.xcconfig"; sourceTree = "<group>"; };
 		AB715017ABF2D68C44897C6F /* Pods_TaskFor500px.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskFor500px.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +223,7 @@
 			children = (
 				75824CFE2363BD1300E00DA5 /* UICollectionView.swift */,
 				75824CFC2363B84200E00DA5 /* UIView.swift */,
+				759ECDD7236667FB009DC35A /* UIImage.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				759ECDAC23650961009DC35A /* PhotosLoadingViewController.swift in Sources */,
 				75824CF82363AFFB00E00DA5 /* Photo.swift in Sources */,
 				75824CC72363635700E00DA5 /* AppDelegate.swift in Sources */,
+				759ECDD8236667FB009DC35A /* UIImage.swift in Sources */,
 				75824D062363CFF100E00DA5 /* PhotoCollectionCell.swift in Sources */,
 				75824CFF2363BD1300E00DA5 /* UICollectionView.swift in Sources */,
 				75824CE923639ECD00E00DA5 /* R.generated.swift in Sources */,
