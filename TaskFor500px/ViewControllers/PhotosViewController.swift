@@ -25,13 +25,13 @@ internal final class PhotosViewController: UIViewController {
     private lazy var greedoLayout = GreedoCalculator(
         rowMaximumHeight: collectionView.bounds.height / 3,
         originalSizeForIndexPath: { [unowned self] indexPath in
-            self.response.photos[safe: indexPath.item]?.size ?? CGSize(width: 0.1, height: 0.1)
+            self.viewModel.photo(at: indexPath)?.size ?? CGSize(width: 0.1, height: 0.1)
         }
     )
     private let disposeBag = DisposeBag()
     private let photosClient = PhotosClient()
     private let imageDownloader = ImageDownloader.default
-    private let response: PopularPhotosResponse
+    private let viewModel: PhotosViewModel
     
     // MARK: init
     @available(*, unavailable)
@@ -40,7 +40,7 @@ internal final class PhotosViewController: UIViewController {
     }
 
     internal init(response: PopularPhotosResponse) {
-        self.response = response
+        self.viewModel = PhotosViewModel(response: response)
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -72,27 +72,20 @@ internal final class PhotosViewController: UIViewController {
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
-    // MARK: retrieving image URLs
-    private func imageURL(for indexPath: IndexPath) -> URL? {
-        return response.photos[indexPath.item].images.first(where: { $0.size == ImageSize.grid.rawValue })?.url
-    }
-    
-    private func validImageURLs(for indexPaths: [IndexPath]) -> [URL] {
-        return indexPaths.compactMap { imageURL(for: $0) }
     }
 }
 
 // MARK: UICollectionViewDataSourcePrefetching
 extension PhotosViewController: UICollectionViewDataSourcePrefetching {
     internal func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        validImageURLs(for: indexPaths).forEach { url in
-            imageDownloader.downloadImage(with: url)
-        }
+        let urls = viewModel.validImageURLs(for: indexPaths)
+            
+        ImagePrefetcher(urls: urls).start()
     }
 
     internal func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
-        validImageURLs(for: indexPaths).forEach { url in
-            imageDownloader.cancel(url: url)
+        viewModel.validImageURLs(for: indexPaths).forEach { url in
+            ImageDownloader.default.cancel(url: url)
         }
     }
 }
@@ -100,7 +93,7 @@ extension PhotosViewController: UICollectionViewDataSourcePrefetching {
 // MARK: UICollectionViewFlowLayoutDataSource
 extension PhotosViewController: UICollectionViewDataSource {
     internal func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return response.photos.count
+        return viewModel.numberOfPhotos
     }
     
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
