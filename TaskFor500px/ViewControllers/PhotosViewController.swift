@@ -23,7 +23,7 @@ internal final class PhotosViewController: UIViewController {
         $0.register(PhotoCollectionCell.self, forCellWithReuseIdentifier: cellIdentifier)
     }
     private lazy var greedoLayout = GreedoCalculator(
-        rowMaximumHeight: collectionView.bounds.height / 3,
+        rowMaximumHeight: 200,
         originalSizeForIndexPath: { [unowned self] indexPath in
             self.viewModel.photo(at: indexPath)?.size ?? CGSize(width: 0.1, height: 0.1)
         }
