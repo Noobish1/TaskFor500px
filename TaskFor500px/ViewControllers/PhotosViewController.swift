@@ -15,6 +15,8 @@ internal final class PhotosViewController: UIViewController {
         }
     ).then {
         $0.backgroundColor = .white
+        $0.isOpaque = true
+        $0.clipsToBounds = true
         $0.dataSource = self
         $0.delegate = self
         $0.prefetchDataSource = self
