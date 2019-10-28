@@ -11,7 +11,7 @@ internal final class PhotosViewController: UIViewController {
         collectionViewLayout: UICollectionViewFlowLayout().then {
             $0.minimumInteritemSpacing = 5
             $0.minimumLineSpacing = 5
-            $0.sectionInset = UIEdgeInsets(top: 10, left: 5, bottom: 5, right: 5)
+            $0.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         }
     ).then {
         $0.backgroundColor = .white
