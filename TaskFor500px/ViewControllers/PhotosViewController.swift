@@ -21,6 +21,10 @@ internal final class PhotosViewController: UIViewController {
         $0.delegate = self
         $0.prefetchDataSource = self
         $0.register(PhotoCollectionCell.self, forCellWithReuseIdentifier: cellIdentifier)
+        
+        $0.addInfiniteScroll { [weak self] _ in
+            self?.fetchNextPage()
+        }
     }
     private lazy var greedoLayout = GreedoCalculator(
         rowMaximumHeight: 200,
@@ -31,6 +35,7 @@ internal final class PhotosViewController: UIViewController {
     private let disposeBag = DisposeBag()
     private let photosClient = PhotosClient()
     private let viewModel: PhotosViewModel
+    private var currentPage: Int
     
     // MARK: init
     @available(*, unavailable)
@@ -39,6 +44,7 @@ internal final class PhotosViewController: UIViewController {
     }
 
     internal init(response: PopularPhotosResponse) {
+        self.currentPage = response.currentPage
         self.viewModel = PhotosViewModel(response: response)
         
         super.init(nibName: nil, bundle: nil)
@@ -71,6 +77,40 @@ internal final class PhotosViewController: UIViewController {
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
+    // MARK: fetching
+    private func fetchNextPage() {
+        guard currentPage < viewModel.pageConfig.numberOfPages else {
+            collectionView.finishInfiniteScroll()
+            
+            return
+        }
+        
+        let previousPage = currentPage
+        
+        currentPage += 1
+        
+        photosClient.popularPhotos(forPage: currentPage)
+            .subscribe(
+                onSuccess: { [weak self] response in
+                    guard let strongSelf = self else { return }
+                    
+                    let insertedIndexPaths = strongSelf.viewModel.addPage(with: response)
+                    
+                    strongSelf.collectionView.performBatchUpdates({
+                        strongSelf.collectionView.insertItems(at: insertedIndexPaths)
+                    }, completion: { _ in
+                        strongSelf.collectionView.finishInfiniteScroll()
+                    })
+                },
+                onError: { [weak self] _ in
+                    guard let strongSelf = self else { return }
+                    
+                    strongSelf.currentPage = previousPage
+                    
+                    strongSelf.collectionView.finishInfiniteScroll()
+                }
+            )
+            .disposed(by: disposeBag)
     }
 }
 
