@@ -99,12 +99,8 @@ extension PhotosViewController: UICollectionViewDataSource {
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: PhotoCollectionCell = collectionView.n1_dequeueReusableCell(identifier: cellIdentifier, indexPath: indexPath)
         
-        if let url = imageURL(for: indexPath) {
-            if let image: UIImage = ImageCache.default.retrieveImageInMemoryCache(forKey: url.absoluteString) {
-                cell.imageView.image = image
-            } else {
-                cell.imageView.kf.setImage(with: url)
-            }
+        if let url = viewModel.imageURL(for: indexPath) {
+            cell.imageView.kf.setImage(with: url, placeholder: PhotoPlaceholderView())
         }
         
         return cell

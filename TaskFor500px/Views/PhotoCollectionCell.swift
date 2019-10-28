@@ -40,6 +40,7 @@ internal final class PhotoCollectionCell: UICollectionViewCell {
     internal override func prepareForReuse() {
         super.prepareForReuse()
         
+        imageView.kf.placeholder?.remove(from: imageView)
         imageView.kf.cancelDownloadTask()
         imageView.image = nil
     }
