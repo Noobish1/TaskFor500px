@@ -33,8 +33,11 @@ extension AppDelegate: UIApplicationDelegate {
     ) -> Bool {
         setupImageCache()
         
+        let navController = UINavigationController(rootViewController: PhotosContainerViewController())
+        navController.isNavigationBarHidden = true
+        
         self.window = UIWindow(frame: UIScreen.main.bounds).then {
-            $0.rootViewController = PhotosContainerViewController()
+            $0.rootViewController = navController
             $0.makeKeyAndVisible()
         }
         

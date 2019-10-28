@@ -3,7 +3,7 @@ import RxSwift
 import SnapKit
 import UIKit
 
-internal final class PhotosViewController: UIViewController {
+internal final class PhotosViewController: UIViewController, NavStackEmbedded {
     // MARK: properties
     private let cellIdentifier = "photoCell"
     private lazy var collectionView = UICollectionView(
@@ -67,6 +67,12 @@ internal final class PhotosViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
+    }
+    
+    internal override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     internal override func viewWillLayoutSubviews() {
@@ -148,6 +154,26 @@ extension PhotosViewController: UICollectionViewDataSource {
 
 // MARK: UICollectionViewDelegateFlowLayout
 extension PhotosViewController: UICollectionViewDelegateFlowLayout {
+    internal func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        guard let cell = collectionView.cellForItem(at: indexPath) as? PhotoCollectionCell else {
+            fatalError("No cell for indexPath: \(indexPath)")
+        }
+        
+        guard let image = cell.imageView.image else {
+            fatalError("No image for cell: \(cell)")
+        }
+        
+        guard let photo = viewModel.photo(at: indexPath) else {
+            fatalError("No photo at indexPath: \(indexPath)")
+        }
+        
+        let vc = PhotoDetailViewController(image: image, forPhoto: photo)
+        
+        navController.pushViewController(vc, animated: true)
+    }
+    
     internal func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
