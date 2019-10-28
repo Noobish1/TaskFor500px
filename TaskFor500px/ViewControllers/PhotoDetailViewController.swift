@@ -18,7 +18,7 @@ internal final class PhotoDetailViewController: UIViewController, NavStackEmbedd
     private lazy var nameLabel = UILabel().then {
         $0.textColor = .black
         $0.font = .preferredFont(forTextStyle: .subheadline)
-        $0.text = "by 12321321312123123123123 11123123123123123 "
+        $0.text = "by \(photo.user.fullName)"
     }
     // I made this a separate label so I could increase the fontsize
     // It's simpler than atrributed strings
