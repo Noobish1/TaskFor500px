@@ -21,6 +21,7 @@ internal final class PhotosContainerViewController: UIViewController {
     // MARK: properties
     private let disposeBag = DisposeBag()
     private let photosClient = PhotosClient()
+    private let initialFetch = Singular()
     private var state: State = .loading(PhotosLoadingViewController())
     
     // MARK: computed property
@@ -45,7 +46,9 @@ internal final class PhotosContainerViewController: UIViewController {
     internal override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        fetchPhotos()
+        initialFetch.performOnce {
+            fetchPhotos()
+        }
     }
     
     // MARK: fetch
