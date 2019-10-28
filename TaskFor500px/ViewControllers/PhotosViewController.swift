@@ -45,11 +45,9 @@ internal final class PhotosViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    // MARK: UIViewController
-    internal override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.backgroundColor = .black
+    // MARK: setup
+    private func setupViews() {
+        view.backgroundColor = .white
         
         view.add(subview: collectionView, withConstraints: { make in
             make.top.equalToSuperviewOrSafeAreaLayoutGuide()
@@ -57,6 +55,13 @@ internal final class PhotosViewController: UIViewController {
             make.trailing.equalToSuperviewOrSafeAreaLayoutGuide()
             make.bottom.equalToSuperview()
         })
+    }
+    
+    // MARK: UIViewController
+    internal override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupViews()
     }
     
     internal override func viewWillLayoutSubviews() {
