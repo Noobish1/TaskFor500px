@@ -20,6 +20,8 @@ internal final class PhotosViewController: UIViewController, NavStackEmbedded {
         $0.dataSource = self
         $0.delegate = self
         $0.prefetchDataSource = self
+        // I do this so that cell's highlight on touch
+        $0.delaysContentTouches = false
         $0.register(PhotoCollectionCell.self, forCellWithReuseIdentifier: cellIdentifier)
         
         $0.addInfiniteScroll { [weak self] _ in

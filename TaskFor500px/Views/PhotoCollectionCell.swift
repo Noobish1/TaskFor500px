@@ -4,11 +4,27 @@ import UIKit
 
 internal final class PhotoCollectionCell: UICollectionViewCell {
     // MARK: properties
+    private let shadeView = UIView().then {
+        $0.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+    }
     internal let imageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.isOpaque = true
         $0.clipsToBounds = true
         $0.backgroundColor = .white
+    }
+    
+    // MARK: selection/highlight
+    internal override var isSelected: Bool {
+        willSet {
+            updateSelectionStyle(selection: isHighlighted || newValue)
+        }
+    }
+
+    internal override var isHighlighted: Bool {
+        willSet {
+            updateSelectionStyle(selection: newValue || isSelected)
+        }
     }
     
     // MARK: init
@@ -33,6 +49,8 @@ internal final class PhotoCollectionCell: UICollectionViewCell {
     
     // MARK: setup
     private func setupViews() {
+        contentView.add(fullscreenSubview: shadeView)
+        
         contentView.add(fullscreenSubview: imageView)
     }
     
@@ -43,5 +61,14 @@ internal final class PhotoCollectionCell: UICollectionViewCell {
         imageView.kf.placeholder?.remove(from: imageView)
         imageView.kf.cancelDownloadTask()
         imageView.image = nil
+    }
+    
+    // MARK: update
+    private func updateSelectionStyle(selection: Bool) {
+        if selection {
+            contentView.bringSubviewToFront(shadeView)
+        } else {
+            contentView.sendSubviewToBack(shadeView)
+        }
     }
 }
