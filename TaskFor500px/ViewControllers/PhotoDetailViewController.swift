@@ -11,13 +11,28 @@ internal final class PhotoDetailViewController: UIViewController, NavStackEmbedd
     private let detailsView = UIView()
     private lazy var titleLabel = UILabel().then {
         $0.textColor = .black
-        $0.font = .preferredFont(forTextStyle: .title1)
+        $0.font = .preferredFont(forTextStyle: .title2)
         $0.text = photo.name
     }
-    private lazy var subtitleLabel = UILabel().then {
+    private let subtitleContainerView = UIView()
+    private lazy var nameLabel = UILabel().then {
         $0.textColor = .black
         $0.font = .preferredFont(forTextStyle: .subheadline)
-        $0.text = "by \(photo.user.fullName) · \(DateFormatters.relative.localizedString(for: photo.createdAt.date, relativeTo: .now))"
+        $0.text = "by 12321321312123123123123 11123123123123123 "
+    }
+    // I made this a separate label so I could increase the fontsize
+    // It's simpler than atrributed strings
+    private let dotLabel = UILabel().then {
+        $0.textColor = .black
+        $0.font = .preferredFont(forTextStyle: .title1)
+        $0.text = "·"
+        $0.setContentCompressionResistancePriority(.required, for: .horizontal)
+    }
+    private lazy var dateLabel = UILabel().then {
+        $0.textColor = .black
+        $0.font = .preferredFont(forTextStyle: .subheadline)
+        $0.text = DateFormatters.relative.localizedString(for: photo.createdAt.date, relativeTo: .now)
+        $0.setContentCompressionResistancePriority(.required, for: .horizontal)
     }
     private let avatarImageSize: CGFloat = 40
     private lazy var avatarImageView = UIImageView().then {
@@ -110,7 +125,7 @@ internal final class PhotoDetailViewController: UIViewController, NavStackEmbedd
         view.add(
             subview: detailsView,
             withConstraints: { make in
-                make.top.equalTo(photoContainerView.snp.bottom)
+                make.top.equalTo(photoContainerView.snp.bottom).offset(10)
                 make.leading.equalToSuperviewOrSafeAreaLayoutGuide().offset(10)
                 make.trailing.equalToSuperviewOrSafeAreaLayoutGuide().inset(10)
                 make.bottom.equalToSuperviewOrSafeAreaLayoutGuide()
@@ -120,17 +135,40 @@ internal final class PhotoDetailViewController: UIViewController, NavStackEmbedd
                     make.top.equalToSuperview()
                     make.leading.equalToSuperview()
                 })
-                
-                container.add(subview: subtitleLabel, withConstraints: { make in
-                    make.top.equalTo(titleLabel.snp.bottom).offset(4)
-                    make.leading.equalToSuperview()
-                    make.bottom.equalToSuperview()
-                })
+        
+                container.add(
+                    subview: subtitleContainerView,
+                    withConstraints: { make in
+                        make.top.equalTo(titleLabel.snp.bottom).offset(4)
+                        make.leading.equalToSuperview()
+                        make.bottom.equalToSuperview()
+                    },
+                    subviews: { container in
+                        container.add(subview: nameLabel, withConstraints: { make in
+                            make.top.equalToSuperview()
+                            make.leading.equalToSuperview()
+                            make.bottom.equalToSuperview()
+                        })
+                        
+                        container.add(subview: dotLabel, withConstraints: { make in
+                            make.top.equalToSuperview()
+                            make.leading.equalTo(nameLabel.snp.trailing)
+                            make.bottom.equalToSuperview()
+                        })
+                        
+                        container.add(subview: dateLabel, withConstraints: { make in
+                            make.top.equalToSuperview()
+                            make.leading.equalTo(dotLabel.snp.trailing)
+                            make.trailing.equalToSuperview()
+                            make.bottom.equalToSuperview()
+                        })
+                    }
+                )
                 
                 container.add(subview: avatarImageView, withConstraints: { make in
                     make.top.greaterThanOrEqualToSuperview()
                     make.leading.greaterThanOrEqualTo(titleLabel.snp.trailing).offset(10)
-                    make.leading.greaterThanOrEqualTo(subtitleLabel.snp.trailing).offset(10)
+                    make.leading.greaterThanOrEqualTo(subtitleContainerView.snp.trailing).offset(10)
                     make.trailing.equalToSuperview().inset(10)
                     make.bottom.lessThanOrEqualToSuperview()
                     make.centerY.equalToSuperview()
