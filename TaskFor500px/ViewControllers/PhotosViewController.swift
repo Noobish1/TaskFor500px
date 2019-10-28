@@ -30,7 +30,6 @@ internal final class PhotosViewController: UIViewController {
     )
     private let disposeBag = DisposeBag()
     private let photosClient = PhotosClient()
-    private let imageDownloader = ImageDownloader.default
     private let viewModel: PhotosViewModel
     
     // MARK: init
