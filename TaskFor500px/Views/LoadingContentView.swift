@@ -7,7 +7,7 @@ internal final class LoadingContentView: UIView {
         $0.textColor = .darkGray
         $0.textAlignment = .center
     }
-    private let activityIndicator = UIActivityIndicatorView(style: .gray)
+    private let activityIndicator = UIActivityIndicatorView(style: .medium)
 
     // MARK: init/deinit
     internal init(title: String) {
