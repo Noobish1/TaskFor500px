@@ -104,7 +104,7 @@ line_length: 200
 file_length:
     - 750 # warning
 closure_body_length:
-    - 30 # warning
+    - 50 # warning
 function_body_length:
     - 200 # warning
 type_body_length:
