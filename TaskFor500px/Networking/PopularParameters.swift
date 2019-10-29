@@ -9,8 +9,8 @@ internal struct PopularParameters: Equatable, Hashable, Codable {
     private let consumerKey = TaskFor500pxKeys().aPIKey
     private let imageSize = ImageSize.allCases.map { $0.rawValue }
     private let sort = "votes_count"
+    private let resultsPerPage = 50
     private let page: Int
-    internal let resultsPerPage = 50
     
     // MARK: init
     internal init(page: Int) {
