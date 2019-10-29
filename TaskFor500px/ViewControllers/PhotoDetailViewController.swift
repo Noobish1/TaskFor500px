@@ -210,6 +210,25 @@ internal final class PhotoDetailViewController: UIViewController, UIGestureRecog
         setupViews()
     }
     
+    internal override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        loadHighResVersion()
+    }
+    
+    internal override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        photoView.kf.cancelDownloadTask()
+    }
+    
+    // MARK: loading
+    private func loadHighResVersion() {
+        if let highResImageURL = photo.imageURL(forSize: .fullSize) {
+            photoView.kf.setImage(with: highResImageURL, placeholder: photoView.image)
+        }
+    }
+    
     // MARK: gestures
     @objc
     private func panRecognized(recognizer: UIPanGestureRecognizer) {
