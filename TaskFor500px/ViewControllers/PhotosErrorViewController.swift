@@ -7,7 +7,7 @@ internal final class PhotosErrorViewController: UIViewController {
         $0.text = NSLocalizedString("Photos failed to load.\nTap to try again", comment: "")
         $0.numberOfLines = 2
         $0.textAlignment = .center
-        $0.textColor = .white
+        $0.textColor = .darkGray
     }
     private let onTap: () -> Void
     private lazy var tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped))

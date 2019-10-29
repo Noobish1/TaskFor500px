@@ -13,26 +13,26 @@ internal final class PhotoDetailViewController: UIViewController, UIGestureRecog
     }
     private let detailsContainerView = UIView()
     private lazy var titleLabel = UILabel().then {
-        $0.textColor = .black
+        $0.textColor = .darkGray
         $0.font = .preferredFont(forTextStyle: .title2)
         $0.text = photo.name
     }
     private let subtitleContainerView = UIView()
     private lazy var nameLabel = UILabel().then {
-        $0.textColor = .black
+        $0.textColor = .darkGray
         $0.font = .preferredFont(forTextStyle: .subheadline)
         $0.text = "by \(photo.user.fullName)"
     }
     // I made this a separate label so I could increase the fontsize
     // It's simpler than atrributed strings
     private let dotLabel = UILabel().then {
-        $0.textColor = .black
+        $0.textColor = .darkGray
         $0.font = .preferredFont(forTextStyle: .title1)
         $0.text = " · "
         $0.setContentCompressionResistancePriority(.required, for: .horizontal)
     }
     private lazy var dateLabel = UILabel().then {
-        $0.textColor = .black
+        $0.textColor = .darkGray
         $0.font = .preferredFont(forTextStyle: .subheadline)
         $0.text = DateFormatters.relative.localizedString(for: photo.createdAt.date, relativeTo: .now)
         $0.setContentCompressionResistancePriority(.required, for: .horizontal)
