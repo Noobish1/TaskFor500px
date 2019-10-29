@@ -2,10 +2,12 @@ import CoreLocation
 import Foundation
 import Moya
 
+// MARK: PhotosService
 internal enum PhotosService {
     case popularPhotos(page: Int)
 }
 
+// MARK: TargetType
 extension PhotosService: TargetType {
     internal var baseURL: URL {
         return HardCodedURL("https://api.500px.com/v1/").url
