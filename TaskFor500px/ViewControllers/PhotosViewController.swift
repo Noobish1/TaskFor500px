@@ -3,7 +3,7 @@ import RxSwift
 import SnapKit
 import UIKit
 
-internal final class PhotosViewController: UIViewController, NavStackEmbedded {
+internal final class PhotosViewController: UIViewController {
     // MARK: properties
     private let cellIdentifier = "photoCell"
     private lazy var collectionView = UICollectionView(
@@ -76,12 +76,6 @@ internal final class PhotosViewController: UIViewController, NavStackEmbedded {
         super.viewDidLoad()
         
         setupViews()
-    }
-    
-    internal override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     internal override func viewWillLayoutSubviews() {

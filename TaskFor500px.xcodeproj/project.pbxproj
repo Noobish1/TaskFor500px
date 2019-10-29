@@ -33,7 +33,6 @@
 		759ECDD42366671B009DC35A /* PhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ECDD32366671B009DC35A /* PhotosViewModel.swift */; };
 		759ECDD623666794009DC35A /* PhotoPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ECDD523666794009DC35A /* PhotoPlaceholderView.swift */; };
 		759ECDD8236667FB009DC35A /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ECDD7236667FB009DC35A /* UIImage.swift */; };
-		759ECDE123668E86009DC35A /* NavStackEmbedded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ECDE023668E86009DC35A /* NavStackEmbedded.swift */; };
 		759ECDE32366BEB8009DC35A /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ECDE22366BEB8009DC35A /* PhotoDetailViewController.swift */; };
 		759ECDE52366BF40009DC35A /* ClosedRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ECDE42366BF40009DC35A /* ClosedRange.swift */; };
 		759ECDE82366BF6F009DC35A /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ECDE72366BF6F009DC35A /* CGSize.swift */; };
@@ -90,7 +89,6 @@
 		759ECDD32366671B009DC35A /* PhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModel.swift; sourceTree = "<group>"; };
 		759ECDD523666794009DC35A /* PhotoPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPlaceholderView.swift; sourceTree = "<group>"; };
 		759ECDD7236667FB009DC35A /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		759ECDE023668E86009DC35A /* NavStackEmbedded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavStackEmbedded.swift; sourceTree = "<group>"; };
 		759ECDE22366BEB8009DC35A /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		759ECDE42366BF40009DC35A /* ClosedRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosedRange.swift; sourceTree = "<group>"; };
 		759ECDE72366BF6F009DC35A /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
@@ -318,7 +316,6 @@
 		759ECDDF23668E71009DC35A /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				759ECDE023668E86009DC35A /* NavStackEmbedded.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -520,7 +517,6 @@
 				759ECDF02366C066009DC35A /* Comparable.swift in Sources */,
 				75824CF32363AB9100E00DA5 /* PhotosClient.swift in Sources */,
 				759ECDA22364C175009DC35A /* GreedoCalculator.swift in Sources */,
-				759ECDE123668E86009DC35A /* NavStackEmbedded.swift in Sources */,
 				759ECDAA2365090B009DC35A /* LoadingContentView.swift in Sources */,
 				75824CFD2363B84200E00DA5 /* UIView.swift in Sources */,
 				75824CF12363A2AA00E00DA5 /* PopularParameters.swift in Sources */,
