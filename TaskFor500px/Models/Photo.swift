@@ -28,3 +28,10 @@ extension Photo {
         return CGSize(width: width, height: height)
     }
 }
+
+// MARK: helper functions
+extension Photo {
+    internal func imageURL(forSize size: ImageSize) -> URL? {
+        return images.first(where: { $0.size == size.rawValue })?.url
+    }
+}

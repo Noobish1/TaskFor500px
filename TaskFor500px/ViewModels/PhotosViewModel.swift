@@ -54,7 +54,7 @@ internal final class PhotosViewModel {
     
     // MARK: retrieving image URLs
     internal func imageURL(for indexPath: IndexPath) -> URL? {
-        return photo(at: indexPath).images.first(where: { $0.size == ImageSize.grid.rawValue })?.url
+        return photo(at: indexPath).imageURL(forSize: .grid)
     }
     
     internal func validImageURLs(for indexPaths: [IndexPath]) -> [URL] {
