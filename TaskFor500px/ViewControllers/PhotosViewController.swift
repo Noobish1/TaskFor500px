@@ -44,6 +44,7 @@ internal final class PhotosViewController: UIViewController, NavStackEmbedded {
     private let photosClient = PhotosClient()
     private let viewModel: PhotosViewModel
     private var currentPage: Int
+    private let detailTransitioner = PhotoDetailTransitioner()
     
     // MARK: init
     @available(*, unavailable)
@@ -168,16 +169,23 @@ extension PhotosViewController: UICollectionViewDelegateFlowLayout {
         guard let cell = collectionView.cellForItem(at: indexPath) as? PhotoCollectionCell else {
             fatalError("No cell for indexPath: \(indexPath)")
         }
-        
+
         guard let image = cell.imageView.image else {
             fatalError("No image for cell: \(cell)")
         }
         
+        let selectedFrame = collectionView.convert(cell.frame, to: view)
+        
         let photo = viewModel.photo(at: indexPath)
         
-        let vc = PhotoDetailViewController(image: image, forPhoto: photo)
+        detailTransitioner.selectedImage = image
+        detailTransitioner.selectedFrame = selectedFrame
         
-        navController.pushViewController(vc, animated: true)
+        let vc = PhotoDetailViewController(image: image, forPhoto: photo)
+        vc.modalPresentationStyle = .custom
+        vc.transitioningDelegate = detailTransitioner
+        
+        present(vc, animated: true)
     }
     
     internal func collectionView(
