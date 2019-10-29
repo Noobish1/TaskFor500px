@@ -44,7 +44,7 @@ extension PhotoDetailDismissAnimator: UIViewControllerAnimatedTransitioning {
     ) {
         fromVC.photoView.alpha = 0
         
-        let transitionImageView = UIImageView(frame: containerView.convert(fromVC.photoView.frame, to: containerView))
+        let transitionImageView = UIImageView(frame: containerView.convert(fromVC.photoView.frame, to: containerView).offsetBy(dx: 0, dy: containerView.safeAreaInsets.top))
         transitionImageView.image = image
 
         containerView.addSubview(transitionImageView)

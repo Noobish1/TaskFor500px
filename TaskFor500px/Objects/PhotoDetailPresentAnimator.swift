@@ -69,10 +69,12 @@ extension PhotoDetailPresentAnimator: UIViewControllerAnimatedTransitioning {
             make.edges.equalToSuperview()
         }
 
+        let endFrame = containerView.convert(toVC.photoView.frame, to: containerView).offsetBy(dx: 0, dy: 10)
+        
         UIView.animate(
             withDuration: self.transitionDuration(using: context),
             animations: {
-                transitionImageView.frame = containerView.convert(toVC.photoView.frame, to: containerView)
+                transitionImageView.frame = endFrame
                 containerView.layoutIfNeeded()
             },
             completion: { finished in
