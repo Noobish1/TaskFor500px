@@ -16,7 +16,7 @@ internal final class PhotoDetailDismissAnimator: NSObject {
 // MARK: UIViewControllerAnimatedTransitioning
 extension PhotoDetailDismissAnimator: UIViewControllerAnimatedTransitioning {
     internal func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.4
+        return 0.35
     }
     
     internal func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
