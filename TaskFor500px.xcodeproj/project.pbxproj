@@ -47,6 +47,7 @@
 		759ECDFC2367763C009DC35A /* ISO8601NetTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ECDFB2367763C009DC35A /* ISO8601NetTime.swift */; };
 		759ECDFE2367768C009DC35A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ECDFD2367768C009DC35A /* User.swift */; };
 		759ECE0023677B09009DC35A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ECDFF23677B09009DC35A /* Date.swift */; };
+		75A06F4B2367F881002470A1 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A06F4A2367F881002470A1 /* UIColor.swift */; };
 		75EA7E3C2363F4DD0012BD43 /* ImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA7E3B2363F4DD0012BD43 /* ImageSize.swift */; };
 		E6E01E8E964E9488996C304E /* Pods_TaskFor500px.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB715017ABF2D68C44897C6F /* Pods_TaskFor500px.framework */; };
 /* End PBXBuildFile section */
@@ -99,6 +100,7 @@
 		759ECDFB2367763C009DC35A /* ISO8601NetTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISO8601NetTime.swift; sourceTree = "<group>"; };
 		759ECDFD2367768C009DC35A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		759ECDFF23677B09009DC35A /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		75A06F4A2367F881002470A1 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		75EA7E3B2363F4DD0012BD43 /* ImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSize.swift; sourceTree = "<group>"; };
 		8B33B1EF7A72938ABD0876AE /* Pods-TaskFor500px.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskFor500px.debug.xcconfig"; path = "Target Support Files/Pods-TaskFor500px/Pods-TaskFor500px.debug.xcconfig"; sourceTree = "<group>"; };
 		AB715017ABF2D68C44897C6F /* Pods_TaskFor500px.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskFor500px.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -263,6 +265,7 @@
 		75824D002363CE5E00E00DA5 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				75A06F4A2367F881002470A1 /* UIColor.swift */,
 				75824CFE2363BD1300E00DA5 /* UICollectionView.swift */,
 				75824CFC2363B84200E00DA5 /* UIView.swift */,
 				759ECDD7236667FB009DC35A /* UIImage.swift */,
@@ -501,6 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				759ECDE52366BF40009DC35A /* ClosedRange.swift in Sources */,
+				75A06F4B2367F881002470A1 /* UIColor.swift in Sources */,
 				759ECDF02366C066009DC35A /* Comparable.swift in Sources */,
 				75824CF32363AB9100E00DA5 /* PhotosClient.swift in Sources */,
 				759ECDA22364C175009DC35A /* GreedoCalculator.swift in Sources */,
