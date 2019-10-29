@@ -25,7 +25,7 @@ internal final class PhotoDetailViewController: UIViewController, NavStackEmbedd
     private let dotLabel = UILabel().then {
         $0.textColor = .black
         $0.font = .preferredFont(forTextStyle: .title1)
-        $0.text = "·"
+        $0.text = " · "
         $0.setContentCompressionResistancePriority(.required, for: .horizontal)
     }
     private lazy var dateLabel = UILabel().then {
