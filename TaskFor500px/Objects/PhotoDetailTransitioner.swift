@@ -1,11 +1,13 @@
 import UIKit
 
+// MARK: PhotoDetailTransitioner
 internal final class PhotoDetailTransitioner: NSObject {
     // MARK: properties
     internal var selectedImage: UIImage?
     internal var selectedFrame: CGRect?
 }
  
+// MARK: UIViewControllerTransitioningDelegate
 extension PhotoDetailTransitioner: UIViewControllerTransitioningDelegate {
     internal func animationController(
         forPresented presented: UIViewController,
