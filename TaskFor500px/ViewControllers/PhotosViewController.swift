@@ -31,7 +31,13 @@ internal final class PhotosViewController: UIViewController, NavStackEmbedded {
     private lazy var greedoLayout = GreedoCalculator(
         rowMaximumHeight: 200,
         originalSizeForIndexPath: { [unowned self] indexPath in
-            self.viewModel.photo(at: indexPath)?.size ?? CGSize(width: 0.1, height: 0.1)
+            // Need this check since this closure can be called
+            // for indexPaths that we don't have backing data for
+            guard indexPath.item < self.viewModel.numberOfPhotos else {
+                return CGSize(width: 0.1, height: 0.1)
+            }
+            
+            return self.viewModel.photo(at: indexPath).size
         }
     )
     private let disposeBag = DisposeBag()
@@ -167,9 +173,7 @@ extension PhotosViewController: UICollectionViewDelegateFlowLayout {
             fatalError("No image for cell: \(cell)")
         }
         
-        guard let photo = viewModel.photo(at: indexPath) else {
-            fatalError("No photo at indexPath: \(indexPath)")
-        }
+        let photo = viewModel.photo(at: indexPath)
         
         let vc = PhotoDetailViewController(image: image, forPhoto: photo)
         

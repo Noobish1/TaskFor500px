@@ -37,11 +37,7 @@ internal final class PhotosViewModel {
     }
     
     // MARK: retrieving photos
-    internal func photo(at indexPath: IndexPath) -> Photo? {
-        guard indexPath.item < numberOfPhotos else {
-            return nil
-        }
-        
+    internal func photo(at indexPath: IndexPath) -> Photo {
         var item = indexPath.item
         
         // We do it this way because we don't want to make any assumptions about page sizes
@@ -53,12 +49,12 @@ internal final class PhotosViewModel {
             }
         }
         
-        return nil
+        fatalError("item not found for indexPath \(indexPath)")
     }
     
     // MARK: retrieving image URLs
     internal func imageURL(for indexPath: IndexPath) -> URL? {
-        return photo(at: indexPath)?.images.first(where: { $0.size == ImageSize.grid.rawValue })?.url
+        return photo(at: indexPath).images.first(where: { $0.size == ImageSize.grid.rawValue })?.url
     }
     
     internal func validImageURLs(for indexPaths: [IndexPath]) -> [URL] {
