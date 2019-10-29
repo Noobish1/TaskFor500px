@@ -29,14 +29,14 @@ extension PopularParameters: KeyedAPIParameters {
         case resultsPerPage = "rpp"
     }
 
-    internal func toKeyedDictionary() -> [Key: APIParamConvertible] {
-        return [
-            .feature: feature,
-            .consumerKey: consumerKey,
-            .imageSize: imageSize,
-            .sort: sort,
-            .page: page,
-            .resultsPerPage: resultsPerPage
-        ]
+    internal func param(for key: Key) -> APIParamConvertible {
+        switch key {
+            case .feature: return feature
+            case .consumerKey: return consumerKey
+            case .imageSize: return imageSize
+            case .sort: return sort
+            case .page: return page
+            case .resultsPerPage: return resultsPerPage
+        }
     }
 }

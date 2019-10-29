@@ -16,7 +16,7 @@ target 'TaskFor500px' do
     pod 'RxCocoa', '5.0.0'
     pod 'SnapKit', :git => 'https://github.com/Noobish1/SnapKit.git', :branch => 'feature/superview-or-safearealayoutguide'
     pod 'Moya/RxSwift', '14.0.0-beta.2'
-    pod 'KeyedAPIParameters', '1.1.0'
+    pod 'KeyedAPIParameters', '2.0.0'
     pod 'R.swift', '5.0.3'
     pod 'Kingfisher', '5.9.0'
     pod 'UIScrollView-InfiniteScroll', '1.1.0'
