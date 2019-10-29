@@ -1,14 +1,17 @@
 import Kingfisher
 import UIKit
 
-internal final class PhotoDetailViewController: UIViewController, NavStackEmbedded, UIGestureRecognizerDelegate {
+internal final class PhotoDetailViewController: UIViewController, UIGestureRecognizerDelegate {
     // MARK: properties
     private let photoContainerView = UIView().then {
         $0.backgroundColor = .white
         $0.clipsToBounds = true
     }
-    private let photoView: UIImageView
-    private let detailsView = UIView()
+    internal let photoView: UIImageView
+    private let detailsOuterContainerView = UIView().then {
+        $0.backgroundColor = .lightGray
+    }
+    private let detailsContainerView = UIView()
     private lazy var titleLabel = UILabel().then {
         $0.textColor = .black
         $0.font = .preferredFont(forTextStyle: .title2)
@@ -42,14 +45,20 @@ internal final class PhotoDetailViewController: UIViewController, NavStackEmbedd
         $0.clipsToBounds = true
         $0.kf.setImage(with: photo.user.avatarURL, placeholder: R.image.defaultAvatar())
     }
+    private lazy var bottomButton = BottomAnchoredButton(
+        bottomInset: self.view.safeAreaInsets.bottom,
+        bgColor: UIColor.black.lighter(by: 20.percent),
+        onTap: { [weak self] in
+            self?.dismiss(animated: true)
+        }
+    ).then {
+        $0.update(title: NSLocalizedString("Close", comment: ""))
+    }
     private lazy var pinchRecognizer = UIPinchGestureRecognizer(
         target: self, action: #selector(pinchRecognized(recognizer:))
     ).then {
         $0.delegate = self
     }
-    private lazy var tapRecognizer = UITapGestureRecognizer(
-        target: self, action: #selector(tapRecognized)
-    )
     private lazy var panRecognizer = UIPanGestureRecognizer(
         target: self, action: #selector(panRecognized)
     ).then {
@@ -92,15 +101,13 @@ internal final class PhotoDetailViewController: UIViewController, NavStackEmbedd
     
     // MARK: setup
     private func setupGestureRecognizers() {
-        view.addGestureRecognizer(pinchRecognizer)
-        view.addGestureRecognizer(tapRecognizer)
-        view.addGestureRecognizer(panRecognizer)
+        photoView.addGestureRecognizer(pinchRecognizer)
+        photoView.addGestureRecognizer(panRecognizer)
     }
     
     private func teardownGestureRecognizers() {
-        view.removeGestureRecognizer(pinchRecognizer)
-        view.removeGestureRecognizer(tapRecognizer)
-        view.removeGestureRecognizer(panRecognizer)
+        photoView.removeGestureRecognizer(pinchRecognizer)
+        photoView.removeGestureRecognizer(panRecognizer)
     }
     
     private func setupViews() {
@@ -123,59 +130,77 @@ internal final class PhotoDetailViewController: UIViewController, NavStackEmbedd
         )
         
         view.add(
-            subview: detailsView,
+            subview: detailsOuterContainerView,
             withConstraints: { make in
-                make.top.equalTo(photoContainerView.snp.bottom).offset(10)
-                make.leading.equalToSuperviewOrSafeAreaLayoutGuide().offset(10)
-                make.trailing.equalToSuperviewOrSafeAreaLayoutGuide().inset(10)
-                make.bottom.equalToSuperviewOrSafeAreaLayoutGuide()
+                make.top.equalTo(photoContainerView.snp.bottom)
+                make.leading.equalToSuperviewOrSafeAreaLayoutGuide()
+                make.trailing.equalToSuperviewOrSafeAreaLayoutGuide()
             },
             subviews: { container in
-                container.add(subview: titleLabel, withConstraints: { make in
-                    make.top.equalToSuperview()
-                    make.leading.equalToSuperview()
-                })
-        
                 container.add(
-                    subview: subtitleContainerView,
+                    subview: detailsContainerView,
                     withConstraints: { make in
-                        make.top.equalTo(titleLabel.snp.bottom).offset(4)
-                        make.leading.equalToSuperview()
-                        make.bottom.equalToSuperview()
+                        make.top.equalToSuperview().offset(10)
+                        make.leading.equalToSuperview().offset(10)
+                        make.trailing.equalToSuperview().inset(10)
+                        make.bottom.equalToSuperview().inset(10)
                     },
                     subviews: { container in
-                        container.add(subview: nameLabel, withConstraints: { make in
+                        container.add(subview: titleLabel, withConstraints: { make in
                             make.top.equalToSuperview()
                             make.leading.equalToSuperview()
-                            make.bottom.equalToSuperview()
                         })
+                
+                        container.add(
+                            subview: subtitleContainerView,
+                            withConstraints: { make in
+                                make.top.equalTo(titleLabel.snp.bottom)
+                                make.leading.equalToSuperview()
+                                make.bottom.equalToSuperview()
+                            },
+                            subviews: { container in
+                                container.add(subview: nameLabel, withConstraints: { make in
+                                    make.top.equalToSuperview()
+                                    make.leading.equalToSuperview()
+                                    make.bottom.equalToSuperview()
+                                })
+                                
+                                container.add(subview: dotLabel, withConstraints: { make in
+                                    make.top.equalToSuperview()
+                                    make.leading.equalTo(nameLabel.snp.trailing)
+                                    make.bottom.equalToSuperview()
+                                })
+                                
+                                container.add(subview: dateLabel, withConstraints: { make in
+                                    make.top.equalToSuperview()
+                                    make.leading.equalTo(dotLabel.snp.trailing)
+                                    make.trailing.equalToSuperview()
+                                    make.bottom.equalToSuperview()
+                                })
+                            }
+                        )
                         
-                        container.add(subview: dotLabel, withConstraints: { make in
-                            make.top.equalToSuperview()
-                            make.leading.equalTo(nameLabel.snp.trailing)
-                            make.bottom.equalToSuperview()
-                        })
-                        
-                        container.add(subview: dateLabel, withConstraints: { make in
-                            make.top.equalToSuperview()
-                            make.leading.equalTo(dotLabel.snp.trailing)
-                            make.trailing.equalToSuperview()
-                            make.bottom.equalToSuperview()
+                        container.add(subview: avatarImageView, withConstraints: { make in
+                            make.top.greaterThanOrEqualToSuperview()
+                            make.leading.greaterThanOrEqualTo(titleLabel.snp.trailing).offset(10)
+                            make.leading.greaterThanOrEqualTo(subtitleContainerView.snp.trailing).offset(10)
+                            make.trailing.equalToSuperview().inset(10)
+                            make.bottom.lessThanOrEqualToSuperview()
+                            make.centerY.equalToSuperview()
+                            make.size.equalTo(avatarImageSize)
                         })
                     }
                 )
-                
-                container.add(subview: avatarImageView, withConstraints: { make in
-                    make.top.greaterThanOrEqualToSuperview()
-                    make.leading.greaterThanOrEqualTo(titleLabel.snp.trailing).offset(10)
-                    make.leading.greaterThanOrEqualTo(subtitleContainerView.snp.trailing).offset(10)
-                    make.trailing.equalToSuperview().inset(10)
-                    make.bottom.lessThanOrEqualToSuperview()
-                    make.centerY.equalToSuperview()
-                    make.size.equalTo(avatarImageSize)
-                })
             }
         )
+        
+        view.add(subview: bottomButton, withConstraints: { make in
+            make.top.equalTo(detailsOuterContainerView.snp.bottom)
+            make.leading.equalToSuperviewOrSafeAreaLayoutGuide()
+            make.trailing.equalToSuperviewOrSafeAreaLayoutGuide()
+            make.bottom.equalToSuperview()
+            make.height.greaterThanOrEqualTo(44)
+        })
     }
     
     // MARK: UIViewController
@@ -185,24 +210,7 @@ internal final class PhotoDetailViewController: UIViewController, NavStackEmbedd
         setupViews()
     }
     
-    internal override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navController.setNavigationBarHidden(false, animated: true)
-    }
-    
-    internal override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        navController.interactivePopGestureRecognizer?.require(toFail: panRecognizer)
-    }
-    
     // MARK: gestures
-    @objc
-    private func tapRecognized() {
-        navController.setNavigationBarHidden(navController.isNavigationBarHidden.toggled(), animated: true)
-    }
-    
     @objc
     private func panRecognized(recognizer: UIPanGestureRecognizer) {
         switch recognizer.state {
@@ -295,5 +303,10 @@ internal final class PhotoDetailViewController: UIViewController, NavStackEmbedd
         shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer
     ) -> Bool {
         return true
+    }
+    
+    // MARK: inset updates
+    internal override func viewSafeAreaInsetsDidChange() {
+        bottomButton.update(bottomInset: view.safeAreaInsets.bottom)
     }
 }
