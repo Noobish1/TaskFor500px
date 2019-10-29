@@ -101,13 +101,13 @@ internal final class PhotoDetailViewController: UIViewController, UIGestureRecog
     
     // MARK: setup
     private func setupGestureRecognizers() {
-        photoView.addGestureRecognizer(pinchRecognizer)
-        photoView.addGestureRecognizer(panRecognizer)
+        photoContainerView.addGestureRecognizer(pinchRecognizer)
+        photoContainerView.addGestureRecognizer(panRecognizer)
     }
     
     private func teardownGestureRecognizers() {
-        photoView.removeGestureRecognizer(pinchRecognizer)
-        photoView.removeGestureRecognizer(panRecognizer)
+        photoContainerView.removeGestureRecognizer(pinchRecognizer)
+        photoContainerView.removeGestureRecognizer(panRecognizer)
     }
     
     private func setupViews() {
