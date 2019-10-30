@@ -52,6 +52,7 @@
 		75A06F4B2367F881002470A1 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A06F4A2367F881002470A1 /* UIColor.swift */; };
 		75A06F4D2367FFB5002470A1 /* PhotoDetailTransitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A06F4C2367FFB5002470A1 /* PhotoDetailTransitioner.swift */; };
 		75AEE16A2369023B00B7CCF3 /* PhotoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AEE1692369023B00B7CCF3 /* PhotoDetailsView.swift */; };
+		75AEE17423695C9E00B7CCF3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 75AEE17323695C9E00B7CCF3 /* README.md */; };
 		75EA7E3C2363F4DD0012BD43 /* ImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA7E3B2363F4DD0012BD43 /* ImageSize.swift */; };
 		E6E01E8E964E9488996C304E /* Pods_TaskFor500px.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB715017ABF2D68C44897C6F /* Pods_TaskFor500px.framework */; };
 /* End PBXBuildFile section */
@@ -109,6 +110,10 @@
 		75A06F4A2367F881002470A1 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		75A06F4C2367FFB5002470A1 /* PhotoDetailTransitioner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailTransitioner.swift; sourceTree = "<group>"; };
 		75AEE1692369023B00B7CCF3 /* PhotoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsView.swift; sourceTree = "<group>"; };
+		75AEE16D23695C4B00B7CCF3 /* screenshot-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-2.png"; sourceTree = "<group>"; };
+		75AEE16E23695C4B00B7CCF3 /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = "<group>"; };
+		75AEE16F23695C4B00B7CCF3 /* screenshot-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-1.png"; sourceTree = "<group>"; };
+		75AEE17323695C9E00B7CCF3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		75EA7E3B2363F4DD0012BD43 /* ImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSize.swift; sourceTree = "<group>"; };
 		8B33B1EF7A72938ABD0876AE /* Pods-TaskFor500px.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskFor500px.debug.xcconfig"; path = "Target Support Files/Pods-TaskFor500px/Pods-TaskFor500px.debug.xcconfig"; sourceTree = "<group>"; };
 		AB715017ABF2D68C44897C6F /* Pods_TaskFor500px.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskFor500px.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +143,8 @@
 		75824CBA2363635700E00DA5 = {
 			isa = PBXGroup;
 			children = (
+				75AEE17323695C9E00B7CCF3 /* README.md */,
+				75AEE16B23695C2F00B7CCF3 /* readme-assets */,
 				75824CDA23636A9900E00DA5 /* .gitignore */,
 				75824CDD23636A9900E00DA5 /* .swiftlint.yml */,
 				75824CDC23636A9900E00DA5 /* Gemfile */,
@@ -324,6 +331,24 @@
 			path = CoreGraphics;
 			sourceTree = "<group>";
 		};
+		75AEE16B23695C2F00B7CCF3 /* readme-assets */ = {
+			isa = PBXGroup;
+			children = (
+				75AEE16C23695C3800B7CCF3 /* screenshots */,
+			);
+			path = "readme-assets";
+			sourceTree = "<group>";
+		};
+		75AEE16C23695C3800B7CCF3 /* screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				75AEE16F23695C4B00B7CCF3 /* screenshot-1.png */,
+				75AEE16D23695C4B00B7CCF3 /* screenshot-2.png */,
+				75AEE16E23695C4B00B7CCF3 /* demo.gif */,
+			);
+			path = screenshots;
+			sourceTree = "<group>";
+		};
 		EBB103F628F8C024401AD042 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75824CE123639C0200E00DA5 /* popular-photos.json in Resources */,
+				75AEE17423695C9E00B7CCF3 /* README.md in Resources */,
 				75824CD32363635B00E00DA5 /* LaunchScreen.storyboard in Resources */,
 				75824CD02363635B00E00DA5 /* Assets.xcassets in Resources */,
 			);

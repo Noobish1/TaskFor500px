@@ -1,3 +1,10 @@
+# Coding Task for 500px
+
+
+![Photos](readme-assets/screenshots/screenshot-1.png)
+![Photo Detail](readme-assets/screenshots/screenshot-2.png)
+![Demo GIF](readme-assets/screenshots/demo.gif)
+
 # Notes
 
 
