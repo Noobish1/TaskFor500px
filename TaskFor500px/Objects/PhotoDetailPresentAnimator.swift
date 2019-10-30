@@ -2,17 +2,7 @@ import SnapKit
 import UIKit
 
 // MARK: PhotoDetailPresentAnimator
-internal final class PhotoDetailPresentAnimator: NSObject {
-    // MARK: properties
-    private let originFrame: CGRect
-    private let image: UIImage
-    
-    // MARK: init
-    internal init(originFrame: CGRect, image: UIImage) {
-        self.originFrame = originFrame
-        self.image = image
-    }
-}
+internal final class PhotoDetailPresentAnimator: NSObject {}
  
 // MARK: UIViewControllerAnimatedTransitioning
 extension PhotoDetailPresentAnimator: UIViewControllerAnimatedTransitioning {
@@ -28,7 +18,7 @@ extension PhotoDetailPresentAnimator: UIViewControllerAnimatedTransitioning {
             fatalError("Could not find presentedViewController for the BottomAnchoredPresentAnimator")
         }
         let containerView = transitionContext.containerView
-
+        
         self.present(
             toVC,
             fromVC: fromVC,
@@ -55,8 +45,8 @@ extension PhotoDetailPresentAnimator: UIViewControllerAnimatedTransitioning {
             heightConstraint = make.height.equalTo(containerView).constraint
         })
 
-        let transitionImageView = UIImageView(frame: originFrame)
-        transitionImageView.image = image
+        let transitionImageView = UIImageView(frame: toVC.originFrame)
+        transitionImageView.image = toVC.originImage
 
         containerView.addSubview(transitionImageView)
         

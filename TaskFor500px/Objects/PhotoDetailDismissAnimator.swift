@@ -1,17 +1,7 @@
 import UIKit
 
 // MARK: PhotoDetailDismissAnimator
-internal final class PhotoDetailDismissAnimator: NSObject {
-    // MARK: properties
-    private let originFrame: CGRect
-    private let image: UIImage
-    
-    // MARK: init
-    internal init(originFrame: CGRect, image: UIImage) {
-        self.originFrame = originFrame
-        self.image = image
-    }
-}
+internal final class PhotoDetailDismissAnimator: NSObject {}
 
 // MARK: UIViewControllerAnimatedTransitioning
 extension PhotoDetailDismissAnimator: UIViewControllerAnimatedTransitioning {
@@ -45,7 +35,7 @@ extension PhotoDetailDismissAnimator: UIViewControllerAnimatedTransitioning {
         fromVC.photoView.alpha = 0
         
         let transitionImageView = UIImageView(frame: containerView.convert(fromVC.photoView.frame, to: containerView).offsetBy(dx: 0, dy: containerView.safeAreaInsets.top))
-        transitionImageView.image = image
+        transitionImageView.image = fromVC.originImage
 
         containerView.addSubview(transitionImageView)
         
@@ -58,7 +48,7 @@ extension PhotoDetailDismissAnimator: UIViewControllerAnimatedTransitioning {
         UIView.animate(
             withDuration: self.transitionDuration(using: context),
             animations: {
-                transitionImageView.frame = self.originFrame
+                transitionImageView.frame = fromVC.originFrame
                 containerView.layoutIfNeeded()
             },
             completion: { finished in

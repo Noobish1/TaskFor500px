@@ -39,8 +39,14 @@ internal final class PhotoDetailViewController: UIViewController, UIGestureRecog
     private let aspectRatio: CGFloat
     private let photo: Photo
     
+    internal let originFrame: CGRect
+    internal let originImage: UIImage
+    
     // MARK: init
-    internal init(image: UIImage, forPhoto photo: Photo) {
+    internal init(image: UIImage, forPhoto photo: Photo, originFrame: CGRect) {
+        self.originImage = image
+        self.originFrame = originFrame
+        
         let photoView = UIImageView(image: image)
         
         self.photo = photo

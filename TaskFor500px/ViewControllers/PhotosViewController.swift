@@ -166,14 +166,11 @@ extension PhotosViewController: UICollectionViewDelegateFlowLayout {
             fatalError("No image for cell: \(cell)")
         }
         
-        let selectedFrame = collectionView.convert(cell.frame, to: view)
-        
-        let photo = viewModel.photo(at: indexPath)
-        
-        detailTransitioner.selectedImage = image
-        detailTransitioner.selectedFrame = selectedFrame
-        
-        let vc = PhotoDetailViewController(image: image, forPhoto: photo)
+        let vc = PhotoDetailViewController(
+            image: image,
+            forPhoto: viewModel.photo(at: indexPath),
+            originFrame: collectionView.convert(cell.frame, to: view)
+        )
         vc.modalPresentationStyle = .custom
         vc.transitioningDelegate = detailTransitioner
         

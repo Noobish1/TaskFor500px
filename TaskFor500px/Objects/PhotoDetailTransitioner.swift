@@ -1,11 +1,7 @@
 import UIKit
 
 // MARK: PhotoDetailTransitioner
-internal final class PhotoDetailTransitioner: NSObject {
-    // MARK: properties
-    internal var selectedImage: UIImage?
-    internal var selectedFrame: CGRect?
-}
+internal final class PhotoDetailTransitioner: NSObject {}
  
 // MARK: UIViewControllerTransitioningDelegate
 extension PhotoDetailTransitioner: UIViewControllerTransitioningDelegate {
@@ -14,17 +10,11 @@ extension PhotoDetailTransitioner: UIViewControllerTransitioningDelegate {
         presenting: UIViewController,
         source: UIViewController
     ) -> UIViewControllerAnimatedTransitioning? {
-        guard let frame = selectedFrame else { return nil }
-        guard let image = selectedImage else { return nil }
-        
-        return PhotoDetailPresentAnimator(originFrame: frame, image: image)
+        return PhotoDetailPresentAnimator()
     }
 
     internal func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        guard let frame = selectedFrame else { return nil }
-        guard let image = selectedImage else { return nil }
-        
-        return PhotoDetailDismissAnimator(originFrame: frame, image: image)
+        return PhotoDetailDismissAnimator()
     }
 
     internal func interactionControllerForPresentation(
