@@ -27,12 +27,12 @@ I use [SnapKit](https://github.com/SnapKit/SnapKit) for AutoLayout because the 5
 
 ## UIView extensions
 
-I use this extension because it couples adding a subview and configuring SnapKit constraints. This avoids the issue of making constraints before adding a subview. The subviews parameter lets me arrange subviews visually beneath their parents.
+I use this extension because it couples adding a subview and configuring SnapKit constraints. This avoids the issue of making constraints before adding a subview. The subviews parameter lets me arrange subviews visually beneath their parents. You can end up with a "pyramid of doom" but at that point you probably want a `UIView` subclass anyway.
 
 ```swift
-    internal func add(subview: UIView, withConstraints constraints: (ConstraintMaker) -> Void, subviews: (UIView) -> Void) {
-		...
-    }
+internal func add(subview: UIView, withConstraints constraints: (ConstraintMaker) -> Void, subviews: (UIView) -> Void) {
+	...
+}
 ```
 
 ## NonEmptyArray
