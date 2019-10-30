@@ -30,7 +30,7 @@ internal final class PhotosViewController: UIViewController {
         rowMaximumHeight: 200,
         originalSizeForIndexPath: { [unowned self] indexPath in
             // Need this check since this closure can be called
-            // for indexPaths that we don't have backing data for
+            // for indexPaths that I don't have backing data for
             guard indexPath.item < self.viewModel.numberOfPhotos else {
                 return CGSize(width: 0.1, height: 0.1)
             }

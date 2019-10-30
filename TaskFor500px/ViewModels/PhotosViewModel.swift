@@ -40,7 +40,7 @@ internal final class PhotosViewModel {
     internal func photo(at indexPath: IndexPath) -> Photo {
         var item = indexPath.item
         
-        // We do it this way because we don't want to make any assumptions about page sizes
+        // I do it this way because I don't want to make any assumptions about page sizes
         for page in pages {
             if item < page.photos.count {
                 return page.photos[item]
