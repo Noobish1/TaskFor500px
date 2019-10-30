@@ -7,6 +7,19 @@
 
 # Notes
 
+## Other code on Github
+
+### Apps/frameworks
+
+- [WeatherRules](https://github.com/Noobish1/WeatherRules), my weather app is open source, this is the best example of my real world code.
+- [KeyedAPIParameters](https://github.com/Noobish1/KeyedAPIParameters) my small framework for API parameters.
+- [KeyedMapper](https://github.com/Noobish1/KeyedMapper) a JSON mapping library that is now deprecated in favour of `Codable`.
+- [Sorter](https://github.com/Noobish1/Sorter) a small concept for sorting.
+
+### Other Coding Tasks
+
+- [CricHQ](https://github.com/Noobish1/CricHQTest) (2 years ago).
+- [TradeMe](https://github.com/Noobish1/TradeMeTest) (2 years ago).
 
 ## Dependencies
 
