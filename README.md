@@ -5,6 +5,7 @@
 
 I tried to use frameworks that the 500px app uses (I checked the Open Source Acknowledgements).
 
+
 ## Dependency manager
 
 I used Cocoapods because I believe the 500px app does, I could've use SPM but I wanted to stick with some of the dev tools that I believe the 500px app is currently using. I left the Pods in git so its easier to run the app. I did however gitignore the `Pods/CocoapodsKeys` directory.
@@ -23,7 +24,7 @@ I used [UIScrollView+InfiniteScroll](https://github.com/pronebird/UIScrollView-I
 
 ## AutoLayout
 
-I use [SnapKit](https://github.com/SnapKit/SnapKit) for AutoLayout because the 500px app uses it and I use it in my own projects.
+I use [SnapKit](https://github.com/SnapKit/SnapKit) for AutoLayout because the 500px app uses it and I use it in my own projects. I wrote all my UI in code as I prefer it (because of Git conflicts, one place for everything) and iOS development seems to be going that way with SwiftUI.
 
 ## UIView extensions
 
