@@ -15,7 +15,7 @@ I used [Cocoapods-keys](https://github.com/orta/cocoapods-keys) to hide the 500p
 
 ## Networking/Rx
 
-I used [RxSwift](https://github.com/ReactiveX/RxSwift) in combination with [Moya](https://github.com/Moya/Moya) and [Alamofire](https://github.com/Alamofire/Alamofire) because I've used them before and the 500px uses Alamofire/RxSwift.
+I used [RxSwift](https://github.com/ReactiveX/RxSwift) in combination with [Moya](https://github.com/Moya/Moya) and [Alamofire](https://github.com/Alamofire/Alamofire) because I've used them before and the 500px uses Alamofire & RxSwift.
 
 ## Pagination
 
@@ -37,7 +37,7 @@ I use this extension because it couples adding a subview and configuring SnapKit
 
 ## NonEmptyArray
 
-I use a NonEmptyArray type based on [this implementation](https://github.com/khanlou/NonEmptyArray) because it helpful sometimes to be sure something won't be empty. It's extremely helpful when an app has "empty views" for when a screen doesn't have data.
+I use a NonEmptyArray type based on [this implementation](https://github.com/khanlou/NonEmptyArray) because it is helpful sometimes to be sure something won't be empty. It's extremely helpful when an app has "empty views" for when a screen doesn't have data.
 
 
 ## Singular
@@ -116,11 +116,11 @@ internal final class PhotosContainerViewController: UIViewController {
 I use the [Then](https://github.com/devxoul/Then) Cocoapod for configuring objects, mostly UIKit ones, like the below example because it groups code nicely.
 
 ```swift
-    private lazy var titleLabel = UILabel().then {
-        $0.textColor = .darkGray
-        $0.font = .preferredFont(forTextStyle: .title2)
-        $0.text = photo.name
-    }
+private lazy var titleLabel = UILabel().then {
+    $0.textColor = .darkGray
+    $0.font = .preferredFont(forTextStyle: .title2)
+    $0.text = photo.name
+}
 ```
 
 ## SwiftLint
@@ -129,4 +129,4 @@ I use [SwiftLint](https://github.com/realm/SwiftLint) to lint my projects and ke
 
 ## Reveal
 
-I use [Reveal](https://revealapp.com/) for view debugging, it's much more powerful than Xcode's builtin view debugging and worth buying.
+I use [Reveal](https://revealapp.com/) for view debugging, it's much more powerful than Xcode's built-in view debugging and worth buying.
